@@ -15,3 +15,7 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::post('/flights/search', array('as' => 'search.flights', 'uses' => 'SearchController@search'));
+Route::post('/airports/search', array('as' => 'list.airports', 'uses' => 'AirportController@search'));
+Route::post('/schedules/new', array('as' => 'schedules.store', 'uses' => 'ScheduleController@create'));

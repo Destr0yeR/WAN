@@ -49,20 +49,21 @@ class AirportSeeder extends Seeder {
 		Airport::create(array('name' => 'Aeropuerto Francisco Carlé', 'city_id' => 36));
 		Airport::create(array('name' => 'Aeropuerto Internacional Capitán FAP Carlos Martínez de Pinillos', 'city_id' => 37));
 		Airport::create(array('name' => 'Aeropuerto Internacional Capitán FAP José A. Quiñones', 'city_id' => 38));
-		Airport::create(array('name' => 'Aeropuerto Internacional Coronel FAP Francisco Secada Vignetta', 'city_id' => 39));
-		Airport::create(array('name' => 'Aeropuerto Internacional de Puerto Maldonado', 'city_id' => 40));
-		Airport::create(array('name' => 'Aeropuerto de Ilo', 'city_id' => 41));
-		Airport::create(array('name' => 'Aeropuerto Internacional Capitán FAP Guillermo Concha Iberico', 'city_id' => 43));
-		Airport::create(array('name' => 'Aeropuerto Internacional Inca Manco Cápac', 'city_id' => 44));
-		Airport::create(array('name' => 'Aeropuerto Cadete FAP Guillermo del Castillo Paredes', 'city_id' => 45));
-		Airport::create(array('name' => 'Aeropuerto Internacional Coronel FAP Carlos Ciriani Santa Rosa', 'city_id' => 46));
-		Airport::create(array('name' => 'Aeropuerto Capitán FAP Pedro Canga Rodríguez', 'city_id' => 47));
-		Airport::create(array('name' => 'Aeropuerto Internacional Capitán FAP David Abensur Rengifo', 'city_id' => 48));
+		Airport::create(array('name' => 'Aeropuerto Internacional Jorge Chávez', 'city_id' => 39));
+		Airport::create(array('name' => 'Aeropuerto Internacional Coronel FAP Francisco Secada Vignetta', 'city_id' => 40));
+		Airport::create(array('name' => 'Aeropuerto Internacional de Puerto Maldonado', 'city_id' => 41));
+		Airport::create(array('name' => 'Aeropuerto de Ilo', 'city_id' => 42));
+		Airport::create(array('name' => 'Aeropuerto Internacional Capitán FAP Guillermo Concha Iberico', 'city_id' => 44));
+		Airport::create(array('name' => 'Aeropuerto Internacional Inca Manco Cápac', 'city_id' => 45));
+		Airport::create(array('name' => 'Aeropuerto Cadete FAP Guillermo del Castillo Paredes', 'city_id' => 46));
+		Airport::create(array('name' => 'Aeropuerto Internacional Coronel FAP Carlos Ciriani Santa Rosa', 'city_id' => 47));
+		Airport::create(array('name' => 'Aeropuerto Capitán FAP Pedro Canga Rodríguez', 'city_id' => 48));
+		Airport::create(array('name' => 'Aeropuerto Internacional Capitán FAP David Abensur Rengifo', 'city_id' => 49));
 		
-		Airport::create(array('name' => 'Ángel S. Adami International Airport', 'city_id' => 49));
-		Airport::create(array('name' => 'C/C Carlos A. Curbelo de Laguna del Sauce International Airport', 'city_id' => 50));
+		Airport::create(array('name' => 'Ángel S. Adami International Airport', 'city_id' => 50));
+		Airport::create(array('name' => 'C/C Carlos A. Curbelo de Laguna del Sauce International Airport', 'city_id' => 51));
 
-		Airport::create(array('name' => 'Simón Bolívar International Airport', 'city_id' => 51));
+		Airport::create(array('name' => 'Simón Bolívar International Airport', 'city_id' => 52));
 		
 
 	}

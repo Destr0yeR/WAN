@@ -9,4 +9,8 @@ class Airport extends Eloquent {
 	public function arrival_schedules(){
 		return $this->hasMany('Schedule', 'arrival_airport', 'airport_id');
 	}
+
+	public function city(){
+		return $this->belongsTo('City');
+	}
 }

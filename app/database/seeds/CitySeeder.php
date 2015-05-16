@@ -50,6 +50,7 @@ class CitySeeder extends Seeder {
 		City::create(array('name' => 'Junín', 'country_id' => 9));
 		City::create(array('name' => 'La Libertad', 'country_id' => 9));
 		City::create(array('name' => 'Lambayeque', 'country_id' => 9));
+		City::create(array('name' => 'Lima', 'country_id' => 9));
 		City::create(array('name' => 'Loreto', 'country_id' => 9));
 		City::create(array('name' => 'Madre de Dios', 'country_id' => 9));
 		City::create(array('name' => 'Moquegua', 'country_id' => 9));
