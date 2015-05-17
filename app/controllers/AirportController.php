@@ -20,7 +20,7 @@ class AirportController extends BaseController {
 			foreach ($results as $result) {
 				$airports[] = $this->format_aiport($result);
 			}
-			
+
 			$response['airports'] = $airports;
 			$response['status']['code'] = 200;
 			$response['status']['message'] = 'OK';
@@ -30,7 +30,7 @@ class AirportController extends BaseController {
 		{
 			$response['status']['code'] = 400;
 			$response['status']['message'] = 'Bad request';
-			$response['status']['description'] = 'Missing parameter.';
+			$response['status']['description'] = 'Missing search_text parameter.';
 		}
 		return Response::json($response,$response['status']['code']);
 	}
