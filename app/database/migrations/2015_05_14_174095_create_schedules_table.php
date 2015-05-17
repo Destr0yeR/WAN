@@ -15,8 +15,8 @@ class CreateSchedulesTable extends Migration {
 		//
 		Schema::create('schedules', function($table){
 			$table->increments('id');
-			$table->timestamp('departure_time');
-			$table->timestamp('arrival_time');
+			$table->time('departure_time');
+			$table->time('arrival_time');
 			$table->integer('departure_airport')->unsigned();
 			$table->integer('arrival_airport')->unsigned();
 			$table->double('price');
