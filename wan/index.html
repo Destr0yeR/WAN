@@ -1,0 +1,100 @@
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+			<link rel="stylesheet" href="css/bootstrap.min.css">
+			<link rel="stylesheet" href="css/jquery-ui.css">
+			<link rel="stylesheet" href="css/index.css">
+			<title>Prueba WAN</title>
+		</head>
+		
+		<div class="container">
+			<form action="">
+				<label class="col-xs-12 row	" for="nombre">Compra de Pasajes</label>
+				<div class="form-group row">
+					<label class="col-xs-6"> <input id="on" type="radio" name="optradio">Ida y Vuelta</label>
+					<label class="col-xs-6"> <input id="off" type="radio" name="optradio">Ida</label>
+				</div>
+				<div class="col-xs-12 row ">
+					<input class="col-sm-6 tx" type="text" id="tags1" placeholder="Seleccione su Origen">
+					<input class="col-sm-6 tx"  type="text" id="tags2" placeholder="Seleccione su Destino">
+				</div>
+				<div class="col-xs-12 fechas row">
+					<div class="col-sm-6 fecha-ida row ">
+						<label class="col-xs-12">Ida: </label>
+						<input class="col-xs-12 tx" type="text" id="datepicker1"></input>
+					</div>
+					<div class="col-sm-6 fecha-vuelta row">
+						<label class="col-xs-12" >Vuelta: </label>
+						<input class="col-xs-12 tx" type="text" id="datepicker2">
+					</div>
+				</div>
+				<input type="submit" value="Buscar Vuelo">
+			</form>
+		</div>
+			<script src="js/jquery.js"></script>
+			<script src="js/jquery-ui.min.js"></script>
+			<script src="js/bootstrap.min.js"></script>
+			<script>
+  				$(function() {
+  				$.datepicker.setDefaults($.datepicker.regional['es']);
+    			$( "#datepicker1" ).datepicker({ 
+    				minDate: "-0D", 
+    				maxDate: "+10Y" 
+    			});
+    			$( "#datepicker2" ).datepicker({ 
+    				minDate: "-0D", 
+    				maxDate: "+10Y" 
+    			});
+  				});	
+  			</script>
+			<script>
+				$(function(){
+					$("#on").click(function(){
+						$(".fecha-vuelta").show();
+					});
+				});
+				$(function(){
+					$("#off").click(function(){
+						$(".fecha-vuelta").hide();
+					});
+				});
+			</script>
+			
+			  	<script>
+				  $(function() {
+				    var availableTags = [
+				      "ActionScript",
+				      "AppleScript",
+				      "Asp",
+				      "BASIC",
+				      "C",
+				      "C++",
+				      "Clojure",
+				      "COBOL",
+				      "ColdFusion",
+				      "Erlang",
+				      "Fortran",
+				      "Groovy",
+				      "Haskell",
+				      "Java",
+				      "JavaScript",
+				      "Lisp",
+				      "Perl",
+				      "PHP",
+				      "Python",
+				      "Ruby",
+				      "Scala",
+				      "Scheme"
+				    ];
+				    $( "#tags1" ).autocomplete({
+				      source: availableTags
+				    });
+				    $( "#tags2" ).autocomplete({
+				      source: availableTags
+				    });
+				  });
+				  </script>
+		</body>
+	</html>
