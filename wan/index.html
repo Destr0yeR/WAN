@@ -8,8 +8,9 @@
 			<link rel="stylesheet" href="css/index.css">
 			<title>Prueba WAN</title>
 		</head>
-		<div class="container row">
-			<div class="menu col-xs-12 hidden-xs">
+		<div class="container">
+			<div class="row">
+				<div class="menu col-xs-12 hidden-xs">
 				<ul >
 					<li><a href="#">WAN Currier</a></li>
 					<li><a href="#">WAN Terrestre</a></li>
@@ -47,30 +48,46 @@
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
 			</nav>
+			</div>
 		</div>
-
+		<br><br>
 		<div class="container">
-			<form action="">
-				<label class="col-xs-12 row	" for="nombre">Compra de Pasajes</label>
-				<div class="form-group row">
-					<label class="col-xs-6"> <input id="on" type="radio" name="optradio">Ida y Vuelta</label>
-					<label class="col-xs-6"> <input id="off" type="radio" name="optradio">Ida</label>
+			<form class="col-xs-12 col-md-6" action="" style="border: 5px solid black">
+				<div class="row">
+					<label class="col-xs-12 row	" for="nombre" style="text-align: center;padding:10px">Compra de Pasajes</label>
 				</div>
-				<div class="col-xs-12 row ">
-					<input class="col-sm-6 tx" type="text" id="tags1" placeholder="Ciudad de Origen">
-					<input class="col-sm-6 tx"  type="text" id="tags2" placeholder="Ciudad de Destino">
-				</div>
-				<div class="col-xs-12 fechas row">
-					<div class="col-sm-6 fecha-ida row ">
-						<label class="col-xs-12">Fecha de Ida: </label>
-						<input class="col-xs-12 tx" type="text" id="datepicker1"></input>
-					</div>
-					<div class="col-sm-6 fecha-vuelta row">
-						<label class="col-xs-12" >Fecha de Regreso: </label>
-						<input class="col-xs-12 tx" type="text" id="datepicker2">
+				<div class="row">
+					<div class="form-group">
+						<label class="col-xs-3"> <input id="on" type="radio" name="optradio">Ida y Vuelta</label>
+						<label class="col-xs-3"> <input id="off" type="radio" name="optradio">Solo Ida</label>
 					</div>
 				</div>
-				<input type="submit" value="Buscar Vuelo">
+				<div class="row">
+					<div class="col-xs-12" style="padding:10px">
+						<input type="text" id="tags1" placeholder="Ciudad de Origen" style="width:99%;text-align:center">
+					</div>
+					<div class="col-xs-12" style="padding:10px">
+						<input type="text" id="tags2" placeholder="Ciudad de Destino" style="width:99%;text-align:center">
+					</div>
+				</div>	
+				<div class="row">
+					<div class="col-xs-6" style="padding-right:5px">
+						<input type="text" id="datepickerSalida" placeholder="Fecha Salida" style="width:90%;text-align:center"></input>
+					</div>
+					<div class="col-xs-6 fecha-vuelta" style="padding-left:5px">
+						<input type="text" id="datepickerRetorno" placeholder="Fecha Retorno" style="width:90%;text-align:center">
+					</div>
+				</div>
+				<div class="row" style="padding:10px">
+					N.Pasajeros <input id="numPass" name="pasajeros" type="spinner"/>
+					
+				</div>
+				<div class="row" style="padding:10px">
+					<input type="submit" value="Buscar Vuelo" style="float:right">
+				</div>
+			</form>
+			<form action="" class="col-xs-12 col-md-6">
+				<img src="img/airplanes.jpg" alt="" style="max-width:100%;max-height:100%;">
 			</form>
 		</div>
 
@@ -85,18 +102,18 @@
 			<script>
   				$(function() {
   				$.datepicker.setDefaults($.datepicker.regional['es']);
-    			$( "#datepicker1" ).datepicker({ 
+    			$( "#datepickerSalida" ).datepicker({ 
     				minDate: "-0D", 
     				maxDate: "+10Y",
     				onSelect:function(selectedDate){
     					
     					$("fecha-vuelta").val(selectedDate);
     					var fechaSeparada=selectedDate.split("/");
-    					$("#datepicker2").datepicker(
+    					$("#datepickerRetorno").datepicker(
     						"option","minDate", new Date(fechaSeparada[2],parseInt(fechaSeparada[0])-1, parseInt(fechaSeparada[1]) ));
     				} 
     			});
-    			$( "#datepicker2" ).datepicker({ 
+    			$( "#datepickerRetorno" ).datepicker({ 
     				minDate: "-0D", 
     				maxDate: "+10Y" ,
     				onSelect:function(selectedDate){
@@ -157,6 +174,15 @@
 				    $( "#tags2" ).autocomplete({
 				      source: availableTags
 				    });
+				  });
+				  </script>
+				  <script>
+				  $(function() {
+				    var spinner = $( "#numPass" ).spinner();
+				    $( "#getvalue" ).click(function() {
+				      alert( numPass.spinner( "value" ) );
+				    });				 
+				    $( "button" ).button();
 				  });
 				  </script>
 		</body>
