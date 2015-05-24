@@ -1,0 +1,6 @@
+Observaciones
+En este archivo se ecribiran todas las observaciones que se tenga que hacer despues de eliminar un js o un css:
+1.-bootstrap-theme no se usa
+2.- <link href='http://fonts.googleapis.com/css?family=Open+Sans|Wire+One' rel='stylesheet' type='text/css' /> fue removido de los estilos 
+3.- el jquery para seleccionar los elementos esta dentro del wan.js
+4.- el jquery para la importacion de elementos del openfooter esta en el wan.js
