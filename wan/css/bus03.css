@@ -1,0 +1,123 @@
+
+	.advertencia{
+		width:70%;
+		background: #F5A9F2;	
+		border-color: #FF8000;
+	}
+	.cabezal{
+		font-weight: bold; 
+		padding: 4px 0 0 5px
+	}
+	.cabezera{
+		height: 22px; 
+		background: #f3f4f9; 
+		font: 11px Arial, Helvetica, sans-serif; 
+		color: #003e7e; 
+		text-align: left
+	}
+
+	.celda{
+		height: 22px; 
+		background: #fff; 
+		font: 11px Arial, Helvetica, sans-serif; 
+		color: #333; 
+		text-align: left; 
+		vertical-align: text-top
+	}
+	.celda_pasajero{
+		height: 27px; 
+		font: normal 12px Arial, sans-serif; 
+		color: #333; 
+		text-align: right; 
+		vertical-align: text-top
+	}
+	.celda_tp{
+		white-space: nowrap; 
+		padding: 0 8px 0 8px; 
+		text-align: left
+	}
+	.col_total{
+		width: 20%; 
+		padding: 0 8px 0 8px;
+	}
+	
+	.costo{
+		padding: 0 8px 0 8px;
+	}
+	.cursiva{
+		font-weight: bold;
+	}
+	.derecha{
+		text-align:right;
+	}
+	.espaciado{
+		visibility: hidden;
+	}
+	.info{
+		border-right: 1px solid #ccc;
+		font-weight: normal;
+		padding: 4px 0 0 5px
+
+	}
+	.izquierda{
+		text-align: left;
+	}
+	.fila_costos{
+		height: 27px; 
+		background: #F3F4F9; 
+		font: normal 12px Arial, Helvetica, sans-serif; 
+		color: #5A5A5A; 
+		text-align: right; 
+		border-bottom: 1px solid #DCE0EE;
+	}
+	.fila_titulo{
+		height: 23px; 
+		background: #f3f4f9; 
+		font: bold 12px Arial, Helvetica, sans-serif; 
+		color: #003e7e; 
+		text-align: right; 
+		border-bottom: 1px solid #DCE0EE; 
+		border-top: 1px solid #DCE0EE;
+	}
+	.info_dinamica{
+		padding: 4px 0 5px 5px;
+		border-right: 1px solid #ccc;
+		font-weight: normal
+	}
+	.letra{
+		font-size: 0.875em
+	}
+	.msj_emergencia{
+		font: 150% sans-serif	
+	}
+	.opcional{
+		display: none;
+	}
+	.p_tamano{
+		width:20%
+	}
+	.tabla_itinerario{
+		border: 1px 
+		solid #CCC; 
+		margin: 0 auto; 
+		margin-top: 0px; 
+		margin-bottom: 15px; 
+		width:100%
+	}
+	.tabla_tarifa{
+		border: 1px solid #CCC; 
+		margin: 0 auto; 
+		margin-top: 0px; 
+		margin-bottom: 15px; 
+		width:100%;display: ;
+	}
+	.titulo{
+		background-color: #033D7D; 
+		border: 0 none; 
+		color: #FFFFFF; 
+		font-size: 1.2em; 
+		font-weight: bold; 	
+		margin: 0px; 
+		padding: 6px 4px 6px 8px; 
+		font-family:Arial, Helvetica, sans-serif
+	}
