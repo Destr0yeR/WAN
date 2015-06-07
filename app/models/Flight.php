@@ -7,6 +7,6 @@ class Flight extends Eloquent {
 	}
 
 	public function schedule(){
-		return $this->belengsTo('Schedule');
+		return $this->belongsTo('Schedule');
 	}
 }
