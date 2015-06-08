@@ -1,10 +1,14 @@
 
 	.advertencia{
-		width:70%;
-		background: #F5A9F2;	
-		border-color: #FF8000;
+		background: #E02121;	
+		border-color: #8C0000;
 		margin: 10px;
-		width: 100%;
+		width: 99%;
+		margin:10px;
+		padding-bottom: 10px;
+		text-align: center;
+		font-weight: bold;
+		font-size: 17px;
 	}
 	.cabezal{
 		font-weight: bold; 
@@ -12,15 +16,15 @@
 	}
 	.cabezera{
 		height: 22px; 
-		background: #f3f4f9; 
+		background: #476786; 
 		font: 11px Arial, Helvetica, sans-serif; 
-		color: #003e7e; 
-		text-align: left
+		color: #FFFFFF; 
+		text-align: left;
 	}
 
 	.celda{
 		height: 22px; 
-		background: #fff; 
+		background: #FFFFFF; 
 		font: 11px Arial, Helvetica, sans-serif; 
 		color: #333; 
 		text-align: left; 
@@ -39,11 +43,13 @@
 		text-align: left
 	}
 	.col_total{
+		text-align: right;
 		width: 20%; 
 		padding: 0 8px 0 8px;
 	}
 	
 	.costo{
+		text-align: right;
 		padding: 0 8px 0 8px;
 	}
 	.cursiva{
@@ -56,7 +62,7 @@
 		visibility: hidden;
 	}
 	.info{
-		border-right: 1px solid #ccc;
+		border-right: 1px solid #041D35;
 		font-weight: normal;
 		padding: 4px 0 0 5px
 
@@ -83,7 +89,7 @@
 	}
 	.info_dinamica{
 		padding: 4px 0 5px 5px;
-		border-right: 1px solid #ccc;
+		border: 1px solid #041D35;
 		font-weight: normal
 	}
 	.letra{
@@ -96,11 +102,11 @@
 		display: none;
 	}
 	.p_tamano{
+		text-align: right;
 		width:20%
 	}
 	.tabla_itinerario{
-		border: 1px 
-		solid #CCC; 
+		border: 1px solid black; 
 		margin: 0 auto; 
 		margin-top: 0px; 
 		margin-bottom: 15px; 
@@ -114,7 +120,7 @@
 		width:100%;display: ;
 	}
 	.titulo{
-		background-color: #033D7D; 
+		background-color: #041D35; 
 		border: 0 none; 
 		color: #FFFFFF; 
 		font-size: 1.2em; 
@@ -123,3 +129,23 @@
 		padding: 6px 4px 6px 8px; 
 		font-family:Arial, Helvetica, sans-serif
 	}
+	/*
+VERDE
+.color-primary-0 { color: #36882D }	
+.color-primary-1 { color: #8DCD86 }
+.color-primary-2 { color: #5BA953 }
+.color-primary-3 { color: #196611 }
+.color-primary-4 { color: #064300 }
+AZUL
+.color-secondary-1-0 { color: #294B6C }	
+.color-secondary-1-1 { color: #6F89A2 }
+.color-secondary-1-2 { color: #476786 }
+.color-secondary-1-3 { color: #133251 }
+.color-secondary-1-4 { color: #041D35 }
+AMARILLO DESCOMPUESTO
+.color-secondary-2-0 { color: #99A336 }	
+.color-secondary-2-1 { color: #EDF5A1 }
+.color-secondary-2-2 { color: #C0CA63 }
+.color-secondary-2-3 { color: #707A15 }
+.color-secondary-2-4 { color: #495100 }
+*/
