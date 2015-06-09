@@ -1,228 +1,165 @@
 <!DOCTYPE html>
 <html>
-		<head>
-			<meta charset="utf-8">
-			<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-			<link rel="stylesheet" href="css/bootstrap.min.css">
-			<link rel="stylesheet" href="css/jquery-ui.css">
-			<link rel="stylesheet" href="css/iconos.css">
-			<link rel="stylesheet" href="css/wan.css">
-			<link rel="stylesheet" href="css/bus03.css">
-			<script src="js/jquery.js"></script>
-			<script src="js/jquery-ui.min.js"></script>
-			<script src="js/bootstrap.min.js"></script>
-			<script src="js/wan.js"></script>
-			<title>Prueba WAN</title>
-			<script type="text/javascript">
-				$(window).load(function() {
-				$('.openfooter').openfooter({
-					barBg: 'transparent-deepsea'
-					});
-				})
-			</script>
-		</head>
-<body>
-	<div class="container-fluid">
-		<div class="row">
-			<nav class="navbar navbar-default col-xs-12">
-			  <div class="">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/jquery-ui.css">
+		<link rel="stylesheet" href="css/iconos.css">
+		<link rel="stylesheet" href="css/wan.css">
+		<link rel="stylesheet" href="css/bus03.css">
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<title>Prueba WAN</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<nav class="navbar navbar-default col-xs-12">
+			  		<div class="">
 			    <!-- Brand and toggle get grouped for better mobile display -->
-			    <div class="navbar-header">
-			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			        <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			      </button>
-			      <a class="navbar-brand" href="#">WAN</a>
-			    </div>
+				    	<div class="navbar-header">
+				      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				        		<span class="sr-only">Toggle navigation</span>
+				        		<span class="icon-bar"></span>
+				        		<span class="icon-bar"></span>
+				        		<span class="icon-bar"></span>
+				      		</button>
+				      		<a class="navbar-brand" href="#">WAN</a>
+				    	</div>
 
 			    <!-- Collect the nav links, forms, and other content for toggling -->
-			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			      <ul class="nav navbar-nav">
-			        <li class="active"><a href="#">WAN Destinos <span class="sr-only">(current)</span></a></li>
-			        <li><a href="#">WAN Calendario</a></li>
-			        <li class="dropdown">
-			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">WAN Servicios<span class="caret"></span></a>
-			          <ul class="dropdown-menu" role="menu">
-			            <li><a href="#">WAN Courrier</a></li>
-			            <li class="divider"></li>
-			            <li><a href="#">WAN Terrestre</a></li>
-			            <li class="divider"></li>
-			            <li><a href="#">WAN Corporativo</a></li>
-			          </ul>
-			        </li>
-			      </ul>
-			    </div><!-- /.navbar-collapse -->
-			  </div><!-- /.container-fluid -->
-			</nav>
-		</div>
+			    		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			    	  		<ul class="nav navbar-nav">
+				        		<li class="active"><a href="#">WAN Destinos <span class="sr-only">(current)</span></a></li>
+				        		<li><a href="#">WAN Calendario</a></li>
+				        		<li class="dropdown">
+			          				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">WAN Servicios<span class="caret"></span></a>
+			          				<ul class="dropdown-menu" role="menu">
+			            				<li><a href="#">WAN Courrier</a></li>
+			            				<li class="divider"></li>
+			            				<li><a href="#">WAN Terrestre</a></li>
+			            				<li class="divider"></li>
+			            				<li><a href="#">WAN Corporativo</a></li>
+			          				</ul>
+			        			</li>
+			      			</ul>
+			    		</div><!-- /.navbar-collapse -->
+			  		</div><!-- /.container-fluid -->
+				</nav>
+			</div>
 		<div class="tabla_1 center-block">
 			<h4 class="titulo">Itinerario</h4>
-			<table class="tabla_itinerario" id="id_tabla_itinerario" cellpadding="0" cellspacing="0">  
-		  		<tbody>
-			  		<tr class="cabezera">
-			    		<td class="cabezal">Ida <a title="Detalle de itinerario" href="javascript:showLightbox_escalas('layer_escalas_1');">[+] info</a></td>
-			    		<td class="info" >Salida</td>
-			    		<td class="info" >&nbsp;</td>
-			    		<td class="info" >Llegada</td>
-			    		<td class="info" >&nbsp;</td>
-			    		<td class="info" >Vuelo</td>
-			    		<td class="info" >Cabina</td>
-			    		<td class="info" >Equipaje</td>
-			  		</tr>
-			  
-			  		<tr class="celda">
-			    		<td class="info_dinamica">Domingo 24 mayo 2015&nbsp;</td>
-					    <td class="info_dinamica"><strong>15:50</strong></td>
-					    <td class="info_dinamica">Lima (LIM)</td>
-					    <td class="info_dinamica"><strong>16:45</strong> <strong></strong></td>
-					    <td class="info_dinamica">Ayacucho (AYP)</td>
-					    <td class="info_dinamica">LA2183<br>
-			      		<br>Operado por Lan Peru   </td>
-			    		<td class="info_dinamica">Económica-V
-			    		</td>
-			    		<td class="info_dinamica">Máximo 2 piezas que pesen 23 kg <strong>en total</strong>.</td>
-			    	</tr>
-			  
-			  		<tr class="cabezera">
-			    		<td class="cabezal">Vuelta <a title="Detalle de itinerario" href="javascript:showLightbox_escalas('layer_escalas_1');">[+] info</a></td>
-			    		<td class="info" >Salida</td>
-			    		<td class="info" >&nbsp;</td>
-			    		<td class="info" >Llegada</td>
-			    		<td class="info" >&nbsp;</td>
-			    		<td class="info" >Vuelo</td>
-			    		<td class="info" >Cabina</td>
-			    		<td class="info" >Equipaje</td>
-			  		</tr>
-			  
-			  		<tr class="celda">
-			    		<td class="info_dinamica">Miércoles 27 mayo 2015&nbsp;</td>
-			    		<td class="info_dinamica"><strong>07:20</strong></td>
-			    		<td class="info_dinamica">Ayacucho (AYP)</td>
-			    		<td class="info_dinamica"><strong>08:10</strong> <strong></strong></td>
-			    		<td class="info_dinamica">Lima (LIM)</td>
-			    		<td class="info_dinamica">LA2180<br><br>Operado por Lan Peru   </td>
-			    		<td class="info_dinamica">Económica-H</td>
-			    		<td class="info_dinamica">Máximo 2 piezas que pesen 23 kg <strong>en total</strong>.</td>
-					</tr>
-		  		</tbody>
-			</table>
+			<div class="tabla_itinerario" id="id_tabla_itinerario" cellpadding="0" cellspacing="0">
+				<div class="cabezera">
+					<div class="cabezal">Ida<a href="#"> [+]info</a></div>
+					<div class="info">Salida</div>
+					<div class="info">&nbsp;</div>
+					<div class="info">Llegada</div>
+					<div class="info">&nbsp;</div>
+					<div class="info">Vuelo</div>
+					<div class="info">Cabina</div>
+					<div class="info">Equipaje</div>
+				</div>
+				<div class="celda">
+					<div class="info_dinamica">Domingo 24 mayo 2015 &nbsp;</div>
+					<div class="info_dinamica"> <strong>15:05</strong> </div>
+					<div class="info_dinamica"> Lima (LIM) </div>
+					<div class="info_dinamica"> <strong> 16:45</strong> </div>
+					<div class="info_dinamica"> Ayacucho (AYP) </div>
+					<div class="info_dinamica"> LA2183  <br> Operado por Lan Peru <br> </div>
+					<div class="info_dinamica"> Economica-V</div>
+					<div class="info_dinamica"> Maximo 2 piezas que pesen 23kg <strong>en total</strong>.</div>
+				</div>
+				<div class="cabezera">
+					<div class="cabezal">Vuelta<a href="#"> [+]info</a></div>
+					<div class="info">Salida</div>
+					<div class="info">&nbsp;</div>
+					<div class="info">Llegada</div>
+					<div class="info">&nbsp;</div>
+					<div class="info">Vuelo</div>
+					<div class="info">Cabina</div>
+					<div class="info">Equipaje</div>
+				</div>
+				<div class="celda">
+					<div class="info_dinamica">Miercoles 27 mayo 2015 &nbsp;</div>
+					<div class="info_dinamica"> <strong>15:05</strong> </div>
+					<div class="info_dinamica"> Lima (LIM) </div>
+					<div class="info_dinamica"> <strong> 16:45</strong> </div>
+					<div class="info_dinamica"> Ayacucho (AYP) </div>
+					<div class="info_dinamica"> LA2183  <br> Operado por Lan Peru <br> </div>
+					<div class="info_dinamica"> Economica-V</div>
+					<div class="info_dinamica"> Maximo 2 piezas que pesen 23kg <strong>en total</strong>.</div>
+				</div>
+			</div>
 		</div>
 		<div class="advertencia">
 			<p class="icon-user letra">Si tú o alguno de tus acompañantes tiene una <a href="http://www.lan.com/sitio_personas/reservas-y-servicios/necesidades-especiales/necesidades-medicas/index.html" target="_blank">necesidad especial</a>,<strong> infórmanos al momento de realizar tu reserva y hasta 48 horas antes de tu vuelo</strong>, llamando al Contact Center al (01) 213 8200 o acercándote a una de nuestras <a href="http://www.lan.com/sitio_personas/contactanos/oficinas/" target="_blank">Oficinas de Atención</a>. </p>
 		</div>
-		<table width="100%">
-	    	<colgroup>	
-	    		<col width="67%">
-	    		<col width="3%">
-	    		<col width="30%">
-	    	</colgroup>
-	    	<tbody>
-	    		<tr>
-	      			<td>
-	        			<div>
-			  				<div id="tabla_cambio_moneda" class="opcional">
-			  					<h4 class="titulo">Tarifa referencial</h4>
-									<table class="table" cellpadding="0" cellspacing="0" width="100%">
-										<tbody>
-											<tr> 
-												<th>&nbsp;</th>
-												<th class="costo derecha">Moneda</th>
-												<th class="costo derecha">Total</th>
-											</tr>
-											<tr class="no-par" id="fila_valor_referencial"> 
-												<td>Valor referencial</td>
-												<td class="right p_tamano" ><strong><span id="span_moneda"></span></strong></td>
-												<td class="right p_tamano" ><strong><span id="span_total"></span></strong></td>
-											</tr>
-										</tbody>
-									</table>
+		<div width="100%">
+			<div>
+				<div>
+					<div>
+						<div class="opcional" id="tabla_cambio_moneda">
+							<h4 class="titulo">Tarifa referencial</h4>
+							<div class="table" cellpadding="0" cellspacin="0" width="100%">
+								<div>
+									<div>&mbsp;</div>
+									<div class="costo derecha">Moneda</div>
+									<div class="costo derecha">Total</div>
+								</div>
+								<div class="no-par" id="fila_valor_referencial">
+									<div>Valor Referencial</div>
+									<div class="right p_tamano"><strong><span id="span_moneda"></span></strong></div>
+									<div class="right p_tamano"><strong><span id="span_total"></span></strong></div>
+								</div>
 							</div>
-	          
-
-							<h4 class="titulo">Tarifa en dólares americanos</h4>
-
-							<table id="qa_tabla_tarifa" class="tabla_tarifa" cellpadding="0" cellspacing="0">
-		    					<tbody>
-		    						<tr class="cabezera"> 
-		        						<th>&nbsp;</th>
-		        						<th class="costo">&nbsp;</th>
-		        						<th class="costo">Tarifa</th>
-		        						<th class="costo">Impuestos</th>       
-		        						<th class="col_total">Total (USD)</th>
-		    						</tr>
-		    						<tr class="no-par celda_pasajero"> 
-										<td class="celda_tp">Pasajero adulto nº 1</td>
-										<td class="costo"></td>
-										<td class="costo">196.00</td>
-										<td class="costo">50.18</td>	
-										<td class="costo"><a title="Total" href="javascript:ajaxpage('/cgi-bin/compra/show_taxes.cgi?accion=show_taxes&amp;session_id=xy91561432477886_8DVMK270I2&amp;n_tax=&amp;t_pax=adt&amp;n_pax=1&amp;cc_data=0', 'content_layer_espera_proceso');showLightbox_espera_procesa_pago('layer_general');">246.18</a></td>
-									</tr>
-									<tr class="par celda_pasajero"> 
-										<td class="celda_tp">Pasajero adulto nº 2</td>
-										<td class="costo"></td>
-										<td class="costo">196.00</td>
-										<td class="costo">50.18</td>
-										<td class="costo"><a title="Total" href="javascript:ajaxpage('/cgi-bin/compra/show_taxes.cgi?accion=show_taxes&amp;session_id=xy91561432477886_8DVMK270I2&amp;n_tax=&amp;t_pax=adt&amp;n_pax=2&amp;cc_data=0', 'content_layer_espera_proceso');showLightbox_espera_procesa_pago('layer_general');">246.18</a></td>
-									</tr>
-									<tr class="no-par celda_pasajero"> 
-										<td class="celda_tp">Pasajero adulto nº 3</td>
-										<td class="costo"></td>
-										<td class="costo">196.00</td>
-										<td class="costo">50.18</td>
-										<td class="costo"><a title="Total" href="javascript:ajaxpage('/cgi-bin/compra/show_taxes.cgi?accion=show_taxes&amp;session_id=xy91561432477886_8DVMK270I2&amp;n_tax=&amp;t_pax=adt&amp;n_pax=3&amp;cc_data=0', 'content_layer_espera_proceso');showLightbox_espera_procesa_pago('layer_general');">246.18</a></td>
-									</tr>
-									<tr class="par celda_pasajero"> 
-										<td class="celda_tp">Pasajero adulto nº 4</td>
-										<td class="costo"></td>
-										<td class="costo">196.00</td>
-										<td class="costo">50.18</td>	
-										<td class="costo"><a title="Total" href="javascript:ajaxpage('/cgi-bin/compra/show_taxes.cgi?accion=show_taxes&amp;session_id=xy91561432477886_8DVMK270I2&amp;n_tax=&amp;t_pax=adt&amp;n_pax=4&amp;cc_data=0', 'content_layer_espera_proceso');showLightbox_espera_procesa_pago('layer_general');">246.18</a></td>
-									</tr>
-									<tr class="no-par celda_pasajero"> 
-										<td class="celda_tp">Pasajero adulto nº 5</td>
-										<td class="costo"></td>
-										<td class="costo">196.00</td>
-										<td class="costo">50.18</td>
-										<td class="costo"><a title="Total" href="javascript:ajaxpage('/cgi-bin/compra/show_taxes.cgi?accion=show_taxes&amp;session_id=xy91561432477886_8DVMK270I2&amp;n_tax=&amp;t_pax=adt&amp;n_pax=5&amp;cc_data=0', 'content_layer_espera_proceso');showLightbox_espera_procesa_pago('layer_general');">246.18</a></td>
-									</tr>
-									<tr class="par celda_pasajero"> 
-										<td class="celda_tp">Pasajero adulto nº 6</td>
-										<td class="costo"></td>
-										<td class="costo">196.00</td>
-										<td class="costo">50.18</td>
-										<td class="costo"><a title="Total" href="javascript:ajaxpage('/cgi-bin/compra/show_taxes.cgi?accion=show_taxes&amp;session_id=xy91561432477886_8DVMK270I2&amp;n_tax=&amp;t_pax=adt&amp;n_pax=6&amp;cc_data=0', 'content_layer_espera_proceso');showLightbox_espera_procesa_pago('layer_general');">246.18</a></td>
-									</tr>
-									<tr class="no-par celda_pasajero"> 
-										<td class="celda_tp">Pasajero adulto nº 7</td>
-										<td class="costo"></td>
-										<td class="costo">196.00</td>
-										<td class="costo">50.18</td>
-										<td class="costo"><a title="Total" href="javascript:ajaxpage('/cgi-bin/compra/show_taxes.cgi?accion=show_taxes&amp;session_id=xy91561432477886_8DVMK270I2&amp;n_tax=&amp;t_pax=adt&amp;n_pax=7&amp;cc_data=0', 'content_layer_espera_proceso');showLightbox_espera_procesa_pago('layer_general');">246.18</a></td>
-									</tr>
-							    	<tr class="cabezera"> 
-								        <td class="costo izquierda" >Total</td>
-								        <td class="costo"></td>
-								        <td class="costo">1,372.00</td>
-								        <td class="costo">351.26</td>        
-								        <td id="id_monto_total_cotizacion" class="costo cursiva" >US$ 1,723.26</td>
-		    						</tr>
-								</tbody>
-							</table>
-							<input name="moneda" value="USD" type="hidden">
-							<input id="monto_total_sin_moneda" name="monto" value="1723.26" type="hidden">
 						</div>
-						<a title="Detalle de condiciones de tarifa escogida" href="javascript:MM_openBrWindow('/cgi-bin/compra/show_regulaciones.cgi?session_id=xy91561432477886_8DVMK270I2','nombre','width=600,height=520,scrollbars=yes');">Ver restricciones de esta tarifa</a>
-	      			</td>
-	      			<td id="space_step_3">&nbsp;</td>
-	      			<td id="another_taxs">
+
+						<h4 class="titulo">Tarifa en dólares americanos</h4>
+						<div class="tabla_tarifa" id="qa_tabla_tarifa" cellpadding="0" cellspacing="0">
+							<div>
+								<div class="cabezera">
+									<div class="costo">&nbsp;</div>
+									<div class="costo">Tarifa</div>
+									<div class="costo">Impuestos</div>
+									<div class="col_total">Total(USD)</div>
+								</div>
+								<div class="no-par celda_pasajero">
+									<div class="celda_tp">Pasajero adulto n° 1</div>
+									<div class="costo"></div>
+									<div class="costo">196.00</div>
+									<div class="costo">50.18</div>
+									<div class="costo">246.18</div>
+								</div>
+								<div class="no-par celda_pasajero">
+									<div class="celda_tp">Pasajero adulto n° 2</div>
+									<div class="costo"></div>
+									<div class="costo">196.00</div>
+									<div class="costo">50.18</div>
+									<div class="costo">246.18</div>
+								</div>
+								<div class="cabezera">
+									<div class="costo izquierda" >Total</div>
+								    <div class="costo"></div>
+								    <div class="costo">1,372.00</div>
+								    <div class="costo">351.26</div>        
+								    <div id="id_monto_total_cotizacion" class="costo cursiva" >US$ 1,723.26</div>
+								</div>
+							</div>
+						</div>
+						<input name="moneda" value="USD" type="hidden">
+						<input id="monto_total_sin_moneda" name="monto" value="1723.26" type="hidden">
+					</div>
+					<div id="space_set_3">&nbsp;</div>
+					<div id="another_taxs">
 						<div id="CCFee">
 							<h4>Ver tarifas en otra moneda</h4>
-							<table class="table" cellpadding="0" cellspacing="0" width="100%">
-								<tbody>
-									<tr>
-										<td>
+							<div class="table" cellpadding="0" cellspacing="0" width="100%">
+								<div>
+									<div>
+										<div>
 											<select id="otra_moneda" onchange="actualizar_moneda(this.value);">
 												<option value="">Selecciona</option>
 												<option value="1.723,USD,US$,dólares americanos">Dólares (USD)</option>
@@ -235,43 +172,34 @@
 												<option value="2.102,CAD,CAD,Dólares Canadienses">Dólares Canadienses (CAD)</option>
 												<option value="4.289.918,COP,$,pesos colombianos">pesos colombianos (COP)</option>
 											</select>
-										</td>
-									</tr>
-									<tr>
-										<td><div id="actualiza_moneda"></div>
-										</td>
-									</tr>
-								</tbody>
-							</table>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-	        
-	      			</td>
-	    		</tr>
-	      
-	  		</tbody>
-  		</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
   		<div id="asistencia">
   			<h3 class="titulo	">RECOMENDADO: Seguro de viaje</h3>
   		  	<table class="principal" id="id_tabla_compra_normal_asistencia" cellpadding="0" cellspacing="0">
-  			<tbody>
-  				<tr>
-    				<td><p class="asis-titulo">Viaja tranquilo, viaja protegido</p><p class="asis-bajada">Principales coberturas: Gastos médicos, cancelación de viaje, pérdida de equipaje, asistencia las 24 horas, entre otras.</p><p>No dejes que lo inesperado arruine tus vacaciones. LAN.com te ofrece la posibilidad de viajar protegido contra enfermedades, accidentes u otros imprevistos a través del <strong>seguro de viajes Pacífico</strong>.</p></td>
-    				<td><img src="http://s.lanstatic.com/es_pe/images/asistencia_viaje/promo_travel_assist.jpg" alt="Viaje tranquilo, viaje protegido" height="90" width="300"></td>
-  					</tr>
-  				<tr>
-    			<td colspan="2"><img src="http://s.lanstatic.com/es_pe/images/asistencia_viaje/logo_seguros_pacifico.gif" alt="Seguros Pacifico" class="logo" height="60" width="110">
+  			<div>
+  				<div>
+    				<div><p class="asis-titulo">Viaja tranquilo, viaja protegido</p><p class="asis-bajada">Principales coberturas: Gastos médicos, cancelación de viaje, pérdida de equipaje, asistencia las 24 horas, entre otras.</p><p>No dejes que lo inesperado arruine tus vacaciones. LAN.com te ofrece la posibilidad de viajar protegido contra enfermedades, accidentes u otros imprevistos a través del <strong>seguro de viajes Pacífico</strong>.</p></div>
+    				<div><img src="http://s.lanstatic.com/es_pe/images/asistencia_viaje/promo_travel_assist.jpg" alt="Viaje tranquilo, viaje protegido" height="90" width="300"></div>
+  					</div>
+  				<div>
+    			<div colspan="2"><img src="http://s.lanstatic.com/es_pe/images/asistencia_viaje/logo_seguros_pacifico.gif" alt="Seguros Pacifico" class="logo" height="60" width="110">
     
 	    			<table class="interior" cellpadding="0" cellspacing="0">
-	    				<colgroup>
-		    				<col width="5%">
-		    				<col width="80%">
-							<col width="15%">
-	    				</colgroup>
-	      				<tbody>
-	      					<tr>
-						        <td class="destacado"><input name="radio" id="asistencia_viaje" value="asistencia_viaje" type="radio"></td>
-						        <td class="destacado"><p><label for="asistencia_viaje"><strong>Sí, quiero contratar el seguro para todos los pasajeros de este viaje</strong></label></p></td>
-						        <td class="destacado-bottom"><strong id="qa_valor_asistencia">USD 91.00 * </strong>
+
+	      				<div>
+	      					<div>
+						        <div class="destacado"><input name="radio" id="asistencia_viaje" value="asistencia_viaje" type="radio"></div>
+						        <div class="destacado"><p><label for="asistencia_viaje"><strong>Sí, quiero contratar el seguro para todos los pasajeros de este viaje</strong></label></p></div>
+						        <div class="destacado-bottom"><strong id="qa_valor_asistencia">USD 91.00 * </strong>
 	        						<div id="following_tooltip" class="espaciado" ></div>
 	          						<div class="precio_referencial">
 		    							<label onmouseover="if (typeof(activa_ttip) != 'undefined') activa_ttip('id_ttip', 'tooltip_frase_variacion_poliza');" onmouseout="if (typeof(desactiva_ttip) != 'undefined') desactiva_ttip();">Precio total referencial
@@ -281,32 +209,78 @@
 	              							</div>
 		    							</label>
 	          						</div>
-	          					</td>
-	          				</tr>
-	      					<tr>
-	        					<td><input name="radio" id="asistencia_viaje2" value="asistencia_viaje2" type="radio"></td>
-	            				<td><p><label for="asistencia_viaje2">No deseo contratar el seguro de viaje</label></p></td>
-	        					<td>&nbsp;</td>
-	      					</tr>
-	    				</tbody>
+	          					</div>
+	          				</div>
+	      					<div>
+	        					<div><input name="radio" id="asistencia_viaje2" value="asistencia_viaje2" type="radio"></div>
+	            				<div><p><label for="asistencia_viaje2">No deseo contratar el seguro de viaje</label></p></div>
+	        					<div>&nbsp;</div>
+	      					</div>
+	    				</div>
 	    			</table>
-    			</td>
-  			</tr>
-  			<tr>
-	    		<td colspan="2"><a title="Revisa la cobertura y beneficios del plan" href="javascript:showLightbox('beneficios_asistencia');">Revisa la cobertura y beneficios del plan [+]</a></td>
-	  		</tr>
-	  		<tr>
-	    		<td colspan="2"><a title="Ver condiciones de contratación del seguro por Internet" href="/files/travel_assist/Condiciones_del_Servicio_en_la_Contratacion_del_Seguro_de_Viajes_por_Internet.pdf" target="_blank">Ver condiciones de contratación del seguro por Internet </a></td>
-	  		</tr>
+    			</div>
+  			</div>
+  			<div>
+	    		<div colspan="2"><a title="Revisa la cobertura y beneficios del plan" href="javascript:showLightbox('beneficios_asistencia');">Revisa la cobertura y beneficios del plan [+]</a></div>
+	  		</div>
+	  		<div>
+	    		<div colspan="2"><a title="Ver condiciones de contratación del seguro por Internet" href="/files/travel_assist/Condiciones_del_Servicio_en_la_Contratacion_del_Seguro_de_Viajes_por_Internet.pdf" target="_blank">Ver condiciones de contratación del seguro por Internet </a></div>
+	  		</div>
 	  
-	  		<tr>
-	    		<td colspan="2" class="contacto">Si optas por contratar el seguro y presionas “continuar”, estarás manifestando expresa e inequívocamente tu voluntad de adquirir un seguro de viajes de Pacífico Seguros y de conocer de manera previa los términos y condiciones de dicho servicio. </td>
-	  		</tr>
-		</tbody>
+	  		<div>
+	    		<div colspan="2" class="contacto">Si optas por contratar el seguro y presionas “continuar”, estarás manifestando expresa e inequívocamente tu voluntad de adquirir un seguro de viajes de Pacífico Seguros y de conocer de manera previa los términos y condiciones de dicho servicio. </div>
+	  		</div>
+		</div>
 	</table>
   	</div>
 		
-	</div>
+		</div>
+		<footer >
+			<div  class="ft_inicial">
+				<div  class="ft_todo">
+					<div class="ft_item" style="display:none" onclick="anterior()">
+						<span class="it_icn"><i class="it_fnt icon-facebook" ></i></span>
+					</div>	
+					<div  class="opciones">
+			
+						<div id="work_icn" class="ft_item icn_efect" onclick="extender(this.id)">
+							<span class="it_icn"><i id="10" class="it_fnt icon-user" ></i></span>
+							<span class="it_txt">Trabajo</span>
+						</div>
+						<div  id="faq_icn" class="ft_item icn_efect" onclick="extender(this.id)" >
+							<span class="it_icn"><i class="it_fnt  icon-user2"></i></span>
+							<span class="it_txt">FAQ</span>
+						</div>
+
+					</div>
+					<div class="ft_item " style="display:none" onclick="siguiente()">
+						<span class="it_icn"><i class="it_fnt icon-airplane" ></i></span>
+					</div>
+				</div>
+			</div>
+			<div class="ft_extendido">
+				<div class="ft_contenido">
+					<div id="work_info" class="ft_bloque">
+						<p class="bloque_t">
+							Trabajo
+						</p>
+								
+						<p class="bloque_txt">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus risus quis turpis interdum, pretium bibendum nisi consequat. Integer eu neque fringilla, adipiscing ante vitae, volutpat enim. Ut a metus tempor, dapibus justo quis, tempor sapien. Morbi sagittis luctus velit, vel tincidunt lacus vulputate vitae. Suspendisse ut lectus justo. Curabitur vel dui quis nisl adipiscing vestibulum quis id risus. Donec et consectetur sapien. Mauris ac pulvinar neque, nec imperdiet mauris. Proin nec felis nec neque ultricies molestie. Phasellus ante elit, feugiat vitae convallis eget, sollicitudin ac nisi.
+						</p>
+					</div>
+
+					<div id="faq_info" class="ft_bloque">
+						<p class="bloque_t">
+							FAQ
+						</p>
+						<p class="bloque_txt">
+							Donec et varius erat. Maecenas eget velit nisi. Etiam eleifend nibh augue, quis semper nulla semper vitae. Curabitur cursus lectus nec eros venenatis, sed porttitor nibh tempor. Vivamus vestibulum justo quis dui fermentum malesuada. Etiam in iaculis nibh, vel dignissim ipsum. Donec volutpat imperdiet mi, a pulvinar erat vestibulum ut. Phasellus ac pulvinar nibh, a bibendum nisl. Maecenas ut leo sit amet lorem fringilla placerat sed a enim. Curabitur vulputate luctus mi, lacinia semper justo rhoncus eget. Duis odio diam, ultricies non lacinia sit amet, interdum et lectus. Donec cursus nulla sed elit molestie rhoncus.
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
 	<script type="text/javascript">
 var $oculto=$('#tabla_cambio_moneda');
 function actualizar_moneda($valor){
@@ -324,12 +298,6 @@ function actualizar_moneda($valor){
 	}
 }
 	</script>
-	<script>
-		$(window).load(function() {
-			$(".aparecer").click(function(){
-   				$(".openfooter").toggle();
-			});
-		})
-	</script>
+	<script src="js/wan.js"></script>
 </body>
 </html>
