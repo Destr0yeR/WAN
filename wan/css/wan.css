@@ -12,9 +12,11 @@ footer {
 .comodin{
 	display:none;
 }
+
 .ft_bloque{
 	padding:0px 0px 0px 20px;
 	width:100%;
+	background-color: #99A336
 }	
 .ft_contenido{
 	display:block;
@@ -23,9 +25,10 @@ footer {
 	overflow-x:hidden;
 	overflow-y:scroll;
 	padding-right:20px;
+	background-color: #99A336
 }
 .ft_inicial {
-	background: #FF0000;
+	background: #C0CA63;
 	overflow-x:auto;
 }
 .ft_item{
