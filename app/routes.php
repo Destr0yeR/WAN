@@ -16,6 +16,8 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::post('/flights/search', array('as' => 'search.flights', 'uses' => 'SearchController@search'));
+Route::get('/flights/search', array('as' => 'search.flights', 'uses' => 'SearchController@search'));
+Route::get('/flights/seats', array('as' => 'search.seats', 'uses' => 'SearchController@searchSeats'));
 Route::post('/airports/search', array('as' => 'list.airports', 'uses' => 'AirportController@search'));
 Route::post('/schedules/new', array('as' => 'schedules.store', 'uses' => 'ScheduleController@create'));
+Route::post('/flights/passengers', array('as' => 'passengers.flights', 'uses' => 'PassengerController@register'));

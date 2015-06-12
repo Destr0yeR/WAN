@@ -94,4 +94,49 @@ class SearchController extends BaseController {
 		return $real_price;
 		
 	}
+
+	public function searchSeats(){
+		
+		$response['status'] = array();
+
+		$input = Input::all();
+		
+		$ocupied_seats = $this->searchOcupiedSeats($input['flight']);
+		$response['quantity'] = count($ocupied_seats);
+		$response['ocupied_seats'] = $ocupied_seats;
+
+		$response['status']['code'] = 200;
+
+		
+		return Response::json($response,$response['status']['code']);
+	}
+
+	public function searchOcupiedSeats($flightnumber)
+	{
+		$flight = Flight::find($flightnumber);
+		$columns = array();
+		$rows = array();
+
+		foreach ($flight->passengers as $passengers) {
+			array_push($columns, $passengers->pivot->column);
+			array_push($rows, $passengers->pivot->row);
+		}
+		$ocupied_seats = $this->createSeats($rows,$columns);
+
+		return $ocupied_seats;
+	}
+
+	public function createSeats($rows,$columns)
+	{
+		$quantity = count($rows);
+		$seats = [];
+		for($i=0;$i<$quantity;$i++)
+		{
+			$seats[$i] = [
+				'row' => $rows[$i],
+				'column' => $columns[$i],
+			];
+		}
+		return $seats;
+	}
 }
