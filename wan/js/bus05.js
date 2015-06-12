@@ -15,9 +15,11 @@ function llenar(text){
 	var $total=$(text);
 	//.load('formulario.html').load('formulario.html')
 	for(i=0;i<participantes;i++){
-		$.get("formulario.html", function(data){
-    $('#ida').html(data);
-});
+		$.ajax({
+		    url: "formulario.html",
+		    success: function (data) { $(text).append(data); },
+		    dataType: 'html'
+		});
 	}
 }
 function validar(elemento){
