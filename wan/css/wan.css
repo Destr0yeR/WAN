@@ -237,6 +237,16 @@ footer {
 	margin-right: 10px;
 	margin-bottom:10px;
 }
+.seat-form-button
+{
+	background-color:#C0CA63 !important;
+	padding: 10px;
+	text-align: center;
+	border-radius: 5px;
+	font-weight: bolder;
+	margin-right: 10px;
+	margin-bottom:10px;
+}
 ::-webkit-input-placeholder { /* WebKit browsers */
 	opacity: 1;
     color:  black;

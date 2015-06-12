@@ -1,11 +1,12 @@
 .asiento{
 	display: inline-block;
+	text-align: center;
 }
 
 .ast_icn{
 
 	display:block;
-	margin:0 auto;
+	margin:5px;
 	position:relative;
 }
 .ast_txt{

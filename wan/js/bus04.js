@@ -83,7 +83,7 @@ function llenar(cont){
 }
 function codigo(numero){
 	var b_z=cnt_zns*cnt_filas*cnt_ast;
-	var caracteres=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+	var caracteres=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 	var nm_n=0;
 	switch(numero%cnt_ast){
 		case 0: nm_c=5; nm_n=-1;break;
@@ -151,7 +151,7 @@ function buscar (bol,texto){
 }
 function validar(){
 	if(!(ast_i.length==ast && ast_v.length==ast)){
-		alert("Error, escoga adecuadamente la cantidad de asientos");
+		alert("Error, escoga adecuadamente la cantidad de asientos"+ast);
 	}
 	else{
 		alert("Sus asientos son: "+ast_i+"-"+ast_v);
