@@ -18,11 +18,11 @@ Route::get('/', function()
 
 //backend
 
-Route::group(array(), function(){
+Route::group(array('prefix' => 'api'), function(){
 	
 	Route::get('/flights/search', array('as' => 'search.flights', 'uses' => 'SearchController@search'));
 	Route::get('/flights/seats', array('as' => 'search.seats', 'uses' => 'SearchController@searchSeats'));
-	Route::post('/airports/search', array('as' => 'list.airports', 'uses' => 'AirportController@search'));
+	Route::get('/airports/search', array('as' => 'list.airports', 'uses' => 'AirportController@search'));
 	Route::post('/schedules/new', array('as' => 'schedules.store', 'uses' => 'ScheduleController@create'));
 
 	Route::post('/flights/passengers', array('as' => 'passengers.flights', 'uses' => 'PassengerController@register'));
@@ -34,6 +34,7 @@ Route::group(array(), function(){
 //front
 Route::group(array(), function(){
 	Route::get('/', array('as' => 'index', 'uses' => 'HomeController@index'));
+	Route::get('/home', array('as' => 'index', 'uses' => 'HomeController@home'));
 	Route::get('/details', array('as' => 'details', 'uses' => 'HomeController@details'));
 	Route::get('/seats', array('as' => 'seats', 'uses' => 'HomeController@seats'));
 	Route::get('/passengers', array('as' => 'passengers', 'uses' => 'HomeController@passengers'));
