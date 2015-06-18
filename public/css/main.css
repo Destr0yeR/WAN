@@ -2,3 +2,18 @@
 .search-container {
 	background-image: url('../img/airplanes.jpg');
 }
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #e2e2e2;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #e2e2e2;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #e2e2e2;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #e2e2e2;
+}

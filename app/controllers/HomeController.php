@@ -21,7 +21,15 @@ class HomeController extends BaseController {
 	}
 
 	public function index() {
+		return View::make('layout.base');
+	}
+
+	public function home() {
 		return View::make('search.bus01');
+	}
+
+	public function results() {
+		return View::make('search.bus02');
 	}
 
 	public function details() {

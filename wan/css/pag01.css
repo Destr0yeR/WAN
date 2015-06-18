@@ -1,0 +1,50 @@
+.imagen> label, .elegir>input{
+	width: 100px;
+	text-align: center;
+}
+.imagen, .elegir{
+	width: 120px
+}
+.opcion{
+	display: inline-block;
+}
+.campos>div{
+	display: inline-block;
+}
+.campos>.inf>input{
+	text-align: center;
+}
+.campos>.inf>input:nth-child(2){
+	width: 120px;
+}
+.campos>.inf>input:nth-child(1){
+	width: 120px;
+	float: left;
+}
+.campos>.inf>input:not(:nth-child(2):nth-child(1)){
+	width: 240px;
+}
+.campos>div>label{
+	width: 190px;
+}
+.campos>.inf{
+	width: 240px;
+}
+.campos{
+	width: 450px;
+}
+.tarjetero>label{
+	width: 190px;
+}
+.card>label:nth-child(1){
+	float :left;
+	width: 120px
+}
+.card>label:nth-child(0){
+	float :right;
+	width: 120px
+}
+.final,.pagos{
+	width: 700px;
+	margin:0 auto 0 auto;
+}
