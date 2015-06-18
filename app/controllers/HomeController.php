@@ -20,4 +20,15 @@ class HomeController extends BaseController {
 		return View::make('hello');
 	}
 
+	public function index() {
+		return View::make('search.bus01');
+	}
+
+	public function details() {
+		return View::make('search.bus03');
+	}
+
+	public function seats() {
+		return View::make('search.bus04');
+	}
 }

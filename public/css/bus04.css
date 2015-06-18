@@ -1,0 +1,39 @@
+.asiento{
+	display: inline-block;
+	text-align: center;
+}
+
+.ast_icn{
+
+	display:block;
+	margin:5px;
+	position:relative;
+}
+.ast_txt{
+	display:table-cell;
+	font-size: 8px;
+	text-align:center;
+	overflow:hidden;
+	position:relative;
+	vertical-align:bottom;
+}
+.icn_efect{
+	transition-property: text-shadow, color, background;
+	transition-duration: 0.5s, 0.5s, 0.5s;
+}
+.icn_efect:hover{
+	color: #fff !important;
+	text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0D83DD, 0 0 40px #0D83DD;
+}
+.grupo{
+	display: inline-block;
+}
+.vuelo{
+	display: inline-block;
+}
+.rojo{
+	background: #DF0101;
+}
+.verde{
+	background: #01DF01;
+}

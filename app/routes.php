@@ -16,29 +16,26 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get('/flights/search', array('as' => 'search.flights', 'uses' => 'SearchController@search'));
-Route::get('/flights/seats', array('as' => 'search.seats', 'uses' => 'SearchController@searchSeats'));
-Route::post('/airports/search', array('as' => 'list.airports', 'uses' => 'AirportController@search'));
-Route::post('/schedules/new', array('as' => 'schedules.store', 'uses' => 'ScheduleController@create'));
+//backend
 
-Route::get('/test', function(){
-	$input = Input::all();
-
-	$airport =  new Airport;
-
-	$airport->id = 3;
-	$airport->name = 'airport name';
+Route::group(array(), function(){
 	
-	{"airport":{'id': 3, 'name': 'airport name'}}
+	Route::get('/flights/search', array('as' => 'search.flights', 'uses' => 'SearchController@search'));
+	Route::get('/flights/seats', array('as' => 'search.seats', 'uses' => 'SearchController@searchSeats'));
+	Route::post('/airports/search', array('as' => 'list.airports', 'uses' => 'AirportController@search'));
+	Route::post('/schedules/new', array('as' => 'schedules.store', 'uses' => 'ScheduleController@create'));
 
-
-	$object = new Object;
-
-	$object->id = 3;
-	$object->name = 'airport name';
-
-	var_dump(json_decode($input['test_field']));
-
+	Route::post('/flights/passengers', array('as' => 'passengers.flights', 'uses' => 'PassengerController@register'));
 });
-Route::post('/flights/passengers', array('as' => 'passengers.flights', 'uses' => 'PassengerController@register'));
+
+
+
+
+//front
+Route::group(array(), function(){
+	Route::get('/', array('as' => 'index', 'uses' => 'HomeController@index'));
+	Route::get('/details', array('as' => 'details', 'uses' => 'HomeController@details'));
+	Route::get('/seats', array('as' => 'seats', 'uses' => 'HomeController@seats'));
+	Route::get('/passengers', array('as' => 'passengers', 'uses' => 'HomeController@passengers'));
+});
 
