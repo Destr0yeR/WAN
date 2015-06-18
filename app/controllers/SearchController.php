@@ -2,20 +2,29 @@
 
 class SearchController extends BaseController {
 	
+	//busqueda de vuelos disponibles
 	public function search (){
 		$response['status'] = array();
 
 		$input = Input::all();
+		$validation=$this->validation_Input_Search_Availables($input);
 
-		$departure_availables = $this->search_availability($input['departure_airport'],$input['arrival_airport'],$input['passengers'],$input['departure_date']);
-		$response['avaible_departure'] = $this->getAvailables($departure_availables,$input['departure_date']);
-
-		if($input['type']==0)
+		if(is_null($validation))
 		{
-			$return_availables = $this->search_availability($input['arrival_airport'],$input['departure_airport'],$input['passengers'],$input['return_date']);
-			$response['available_return'] = $this->getAvailables($return_availables,$input['return_date']);	
+			$departure_availables = $this->search_availability($input['departure_airport'],$input['arrival_airport'],$input['passengers'],$input['departure_date']);
+			$response['avaible_departure'] = $this->getAvailables($departure_availables,$input['departure_date']);
+
+			if($input['type']==0)
+			{
+				$return_availables = $this->search_availability($input['arrival_airport'],$input['departure_airport'],$input['passengers'],$input['return_date']);
+				$response['available_return'] = $this->getAvailables($return_availables,$input['return_date']);	
+			}
+			$response['status']['code'] = 200;
+		}else{
+			$response['status']['code'] = 400;
+			$response['status']['description'] = $validation;
 		}
-		$response['status']['code'] = 200;
+		
 		return Response::json($response,$response['status']['code']);
 	}
 
@@ -95,17 +104,48 @@ class SearchController extends BaseController {
 		
 	}
 
+	public function validation_Input_Search_Availables($input)
+	{
+		$validation = Validator::make($input, array(
+			'type' => 'required|in:0,1',
+			'departure_airport' => 'required|exists:airports,id',
+			'arrival_airport' => 'required|exists:airports,id',
+			'departure_date' => 'required|date',
+			'return_date' =>	'date|after:'.$input['departure_date'],
+			'passengers' =>'required|integer|max:5|min:1'
+		));
+		if($validation->fails())
+		{
+			return $validation->messages();
+
+		}
+		else
+		{
+			return null;
+		}
+		
+	}
+
+	//Busqueda de Asientos ocupados
+
 	public function searchSeats(){
 		
 		$response['status'] = array();
 
 		$input = Input::all();
 		
-		$ocupied_seats = $this->searchOcupiedSeats($input['flight']);
-		$response['quantity'] = count($ocupied_seats);
-		$response['ocupied_seats'] = $ocupied_seats;
-
-		$response['status']['code'] = 200;
+		$validation = $this->validation_Input_Seats($input);
+		if(is_null($validation)){
+			$ocupied_seats = $this->searchOcupiedSeats($input['flight']);
+			$response['quantity'] = count($ocupied_seats);
+			$response['ocupied_seats'] = $ocupied_seats;
+			$response['status']['code'] = 200;
+			$response['status']['description'] = 'Operation Successfull';
+		}else{
+			$response['status']['code'] = 400;
+			$response['status']['description'] = $validation;
+		}
+		
 
 		
 		return Response::json($response,$response['status']['code']);
@@ -139,4 +179,17 @@ class SearchController extends BaseController {
 		}
 		return $seats;
 	}
+	public function validation_Input_Seats($input)
+	{
+		$validation = Validator::make($input,array(
+			'flight' => 'exists:flights,id'
+		));
+
+		if($validation->fails()){
+			return $validation->messages();
+		}
+		return null;
+	}
+
 }
+

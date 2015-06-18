@@ -12,83 +12,48 @@ class ScheduleController extends BaseController {
 		$time_departure_time = strtotime($input['departure_time']);
 		$time_arrival_time = strtotime($input['arrival_time']);
 
-		if($time_departure_time < $time_arrival_time)
+		$validator = $this->verify_Input($input);
+
+		if($validator->passes())
 		{
-			$airplane = Airplane::find($input['airplane_id']);
-			if($airplane)
-			{
-				
-				if($input['max_days'] > Config::get('constants.max_days'))
-				{
-					$_departure_airport = Airport::find($input['departure_airport']);
-					$_arrival_airport = Airport::find($input['arrival_airport']);
 
-					if($_departure_airport)
-					{
-						if($_arrival_airport)
-						{
-							if($_arrival_airport != $_departure_airport)
-							{
-								if($input['porcentage'] > Config::get('constants.porcentage'))
-								{
-									if($input['price'] > Config::get('constants.price'))
-									{
-										$schedule = new Schedule;
+		$schedule = new Schedule;
 
-										$schedule->departure_time 		= $input['departure_time'];
-										$schedule->arrival_time 		= $input['arrival_time'];
-										$schedule->departure_airport 	= $input['departure_airport'];
-										$schedule->arrival_airport 		= $input['arrival_airport'];
-										$schedule->price 				= $input['price'];
-										$schedule->porcentage		 	= $input['porcentage'];
-										$schedule->max_days			 	= $input['max_days'];
-										$schedule->airplane_id 			= $input['airplane_id'];
-										$schedule->save();
+		$schedule->departure_time 		= $input['departure_time'];
+		$schedule->arrival_time 		= $input['arrival_time'];
+		$schedule->departure_airport 	= $input['departure_airport'];
+		$schedule->arrival_airport 		= $input['arrival_airport'];
+		$schedule->price 				= $input['price'];
+		$schedule->porcentage		 	= $input['porcentage'];
+		$schedule->max_days			 	= $input['max_days'];
+		$schedule->airplane_id 			= $input['airplane_id'];
+		$schedule->save();
+		
 
-										$response['status']['code'] = 200;
-										$response['status']['message'] = 'OK';
-										$response['status']['description'] = 'Operation successful';
-									}
-									else
-									{
-										$response['status']['description'] = 'Price must be greater than 50';
-									}
-								}
-								else
-								{
-									$response['status']['description'] = 'Porcentage must be greater than 0.1';
-								}
-							}
-							else
-							{
-								$response['status']['description'] = 'Arrival Airport and Departure Airport muest be different';
-							}
-						}
-						else
-						{
-							$response['status']['description'] = 'Arrival Airport doesn\'t exist';
-						}
-					}
-					else
-					{
-						$response['status']['description'] = 'Departure Airport doesn\'t exist';
-					}	
-				}
-				else
-				{
-					$response['status']['description'] = 'Max days must be greater than '. Config::get('constants.max_days');
-				}
-			}
-			else
-			{
-				$response['status']['description'] = 'Airplane doesn\'t exist.';
-			}
+		$response['status']['code'] = 200;
+		$response['status']['message'] = 'OK';
+		$response['status']['description'] = ['Operation successful'] ;
 		}
 		else
 		{
-			$response['status']['description'] = 'Departure Time must be less than Arrival Time.';
+			$response['status']['description'] = $validator->messages();
 		}
 
+
 		return Response::json($response, $response['status']['code']);
+	}
+
+	public function verify_Input($input){
+		$validator = Validator::make($input,array(
+			'departure_time' => 'date_format:H:i',
+			'arrival_time' => 'date_format:H:i',
+			'airplane_id' => 'exists:airplanes,id',
+			'max_days' => 'integer|min:'.Config::get('constants.max_days'),
+			'departure_airport' => 'exists:airports,id' ,
+			'arrival_airport' => 'exists:airports,id|different:departure_airport',
+			'porcentage' => 'numeric|min:'.Config::get('constants.porcentage'),
+			'price' => 'numeric|min:'.Config::get('constants.price')
+		));
+		return $validator;
 	}
 }
