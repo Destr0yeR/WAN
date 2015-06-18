@@ -19,3 +19,23 @@ Route::get('/', function()
 Route::post('/flights/search', array('as' => 'search.flights', 'uses' => 'SearchController@search'));
 Route::post('/airports/search', array('as' => 'list.airports', 'uses' => 'AirportController@search'));
 Route::post('/schedules/new', array('as' => 'schedules.store', 'uses' => 'ScheduleController@create'));
+
+Route::get('/test', function(){
+	$input = Input::all();
+
+	$airport =  new Airport;
+
+	$airport->id = 3;
+	$airport->name = 'airport name';
+	
+	{"airport":{'id': 3, 'name': 'airport name'}}
+
+
+	$object = new Object;
+
+	$object->id = 3;
+	$object->name = 'airport name';
+
+	var_dump(json_decode($input['test_field']));
+
+});
