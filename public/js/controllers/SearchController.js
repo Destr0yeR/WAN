@@ -11,7 +11,7 @@
         vm.departure_airport = {};
         vm.arrival_airport = {};
         vm.pasajeros = 1;
-
+        vm.ida_y_vuelta = 0;
         activate();
         ////////////////
         function activate() {

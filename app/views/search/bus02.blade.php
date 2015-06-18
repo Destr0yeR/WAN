@@ -55,7 +55,7 @@
 					<div class="elementos"><label ><%sc.departure_time%></label></div>
 					<div class="elementos"><label ><%sc.duration%> hrs. 00 min</label></div>
 					<div class="elementos"><label ><%sc.price | currency%></label></div>
-					<div class="elementos opt"><input type="radio" name="go"></div>
+					<div class="elementos opt"><input type="radio" name="go"  ng-click="vm.setOptionDeparture(sc)"></div>
 				</div>
 			</div>
 		</div>
@@ -73,7 +73,7 @@
 					<div class="elementos"><label ><%sc.departure_time%></label></div>
 					<div class="elementos"><label ><%sc.duration%> hrs. 00 min</label></div>
 					<div class="elementos"><label ><%sc.price | currency%></label></div>
-					<div class="elementos opt"><input type="radio" name="back"></div>
+					<div class="elementos opt"><input type="radio" name="back" ng-click="vm.setOptionReturn(sc)"></div>
 				</div>
 			</div>
 		</div>

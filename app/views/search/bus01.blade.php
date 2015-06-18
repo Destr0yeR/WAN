@@ -33,6 +33,7 @@
 			<div  class="row">
 				<input class="search-form-button col-xs-12" type="button" value="Buscar Vuelo" style="float:right" ng-click="vm.searchFlights()">
 			</div>
+			<input type="hidden" ng-model="vm.ida_y_vuelta" id="ida_y_vuelta">
 		</div>
 	</div>	
 </div>
@@ -71,11 +72,15 @@
 	$(function(){
 		$("#on").click(function(){
 			$(".fecha-vuelta").show();
+			$("#ida_y_vuelta").val(0);
+			$("#ida_y_vuelta").trigger('change');
 		});
 	});
 	$(function(){
 		$("#off").click(function(){
 			$(".fecha-vuelta").hide();
+			$("#ida_y_vuelta").val(1);
+			$("#ida_y_vuelta").trigger('change');
 		});
 	});
 </script>

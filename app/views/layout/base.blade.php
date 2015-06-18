@@ -31,6 +31,7 @@
 	{{HTML::script('js/config/constants.js')}}
 	{{HTML::script('js/services/AutoCompleteService.js')}}
 	{{HTML::script('js/entities/Schedule.js')}}
+	{{HTML::script('js/entities/Fligth.js')}}
 	{{HTML::script('js/directives/autocompletedepartureairport.js')}}
 	{{HTML::script('js/directives/autocompletearrivalairport.js')}}
 	{{HTML::script('js/services/ConsumerService.js')}}

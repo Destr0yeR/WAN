@@ -3,9 +3,9 @@
     angular
         .module('wan')
         .controller('ScheduleController', Controller);
-    Controller.$inject = ['Schedule', 'ConsumerService'];
+    Controller.$inject = ['Schedule', 'ConsumerService', 'Fligth'];
     /* @ngInject */
-    function Controller(Schedule, ConsumerService) {
+    function Controller(Schedule, ConsumerService, Fligth) {
         var vm = this;
         vm.title = 'Controller';
         vm.departure_airport = {};
@@ -56,7 +56,21 @@
         }
 
         vm.next = function() {
-            
+
+            var flight = {
+                
+            }
+
+            Fligth.set();
+        }
+
+        vm.setOptionReturn = function(option) {
+            vm.option_return = option;
+
+        }
+
+        vm.setOptionDeparture = function(option) {
+            vm.option_departure = option;
         }
     }
 })();
