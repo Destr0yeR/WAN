@@ -34,6 +34,7 @@ Route::group(array('prefix' => 'api'), function(){
 //front
 Route::group(array(), function(){
 	Route::get('/', array('as' => 'index', 'uses' => 'HomeController@index'));
+	Route::get('/results', array('as' => 'results', 'uses' => 'HomeController@results'));
 	Route::get('/home', array('as' => 'index', 'uses' => 'HomeController@home'));
 	Route::get('/details', array('as' => 'details', 'uses' => 'HomeController@details'));
 	Route::get('/seats', array('as' => 'seats', 'uses' => 'HomeController@seats'));

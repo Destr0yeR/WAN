@@ -21,7 +21,7 @@
         		+'departure_airport='+filters.departure_airport
         		+'&departure_date='+filters.departure_date
         		+'&arrival_airport='+filters.arrival_airport
-        		+'&arrival_date='+filters.return_date
+        		+'&return_date='+filters.return_date
         		+'&passengers='+filters.passengers
         		+'&type='+filters.type;
 

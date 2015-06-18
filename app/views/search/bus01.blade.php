@@ -23,7 +23,7 @@
 					<input class="search-form-date" type="text" id="datepickerSalida" placeholder="Fecha Salida" ng-model="vm.departure_date">
 				</div>
 				<div class="col-xs-6 fecha-vuelta" style="padding-left:5px">
-					<input class="search-form-date" type="text" id="datepickerRetorno" placeholder="Fecha Retorno" ng-model="vm.return_data">
+					<input class="search-form-date" type="text" id="datepickerRetorno" placeholder="Fecha Retorno" ng-model="vm.return_date">
 				</div>
 			</div>
 			<div style="padding:10px;padding-bottom:0px">

@@ -29,7 +29,7 @@ class HomeController extends BaseController {
 	}
 
 	public function results() {
-		
+		return View::make('search.bus02');
 	}
 
 	public function details() {

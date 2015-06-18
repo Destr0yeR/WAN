@@ -33,13 +33,17 @@
                 departure_airport: vm.departure_airport.id,
                 departure_date: vm.departure_date,
                 arrival_airport: vm.arrival_airport.id,
-                return_date: vm.arrival_date,
+                return_date: vm.return_date,
                 passengers: vm.pasajeros,
-                type: 1
+                type: vm.ida_y_vuelta
             }
 
             ConsumerService.searchFlightAvailability(filters).success(function(data){
-                Schedule.set(data.avaible_departure);
+                var schedule = {
+                    avaible_departure: data.avaible_departure,
+                    available_return: data.available_return
+                }
+                Schedule.set(schedule);
                 $location.path('/results');
             });
         }

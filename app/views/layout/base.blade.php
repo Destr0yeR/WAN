@@ -9,7 +9,8 @@
 		<link rel="stylesheet" href="css/wan.css">
 		<link rel="stylesheet" href="css/bus03.css">
 		<link rel="stylesheet" href="css/main.css">
-		<script src="js/jquery.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/bus02.css">
+		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<title>Prueba WAN</title>
@@ -34,4 +35,5 @@
 	{{HTML::script('js/directives/autocompletearrivalairport.js')}}
 	{{HTML::script('js/services/ConsumerService.js')}}
 	{{HTML::script('js/controllers/SearchController.js')}}
+	{{HTML::script('js/controllers/ScheduleController.js')}}
 </html>	

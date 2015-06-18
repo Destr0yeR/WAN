@@ -1,6 +1,4 @@
-@extends('layout.base')
 
-@section('content')
 		<div class="tabla_1 center-block">
 			<h4 class="titulo">Itinerario</h4>
 			<table class="tabla_itinerario" id="id_tabla_itinerario" cellpadding="0" cellspacing="0">  
@@ -273,4 +271,3 @@ function actualizar_moneda($valor){
 			});
 		})
 	</script>
-@endsection
