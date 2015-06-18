@@ -7,6 +7,6 @@ class Passenger extends Eloquent {
 	}
 
 	public function flights(){
-		return $this->belongsToMany('Flight', 'passengers_flights')
+		return $this->belongsToMany('Flight', 'passengers_flights')->withPivot('price','column','row');
 	}
 }

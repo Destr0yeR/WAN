@@ -17,20 +17,21 @@ class ScheduleController extends BaseController {
 			$airplane = Airplane::find($input['airplane_id']);
 			if($airplane)
 			{
-				if($input['max_days'] > Config::get('max_days'))
+				
+				if($input['max_days'] > Config::get('constants.max_days'))
 				{
 					$_departure_airport = Airport::find($input['departure_airport']);
-					$_arrival_airport = Airport::find($input['departure_airport']);
+					$_arrival_airport = Airport::find($input['arrival_airport']);
 
 					if($_departure_airport)
 					{
 						if($_arrival_airport)
 						{
-							if($_arrival_airport == $_departure_airport)
+							if($_arrival_airport != $_departure_airport)
 							{
-								if($input['porcentage'] > Config::get('porcentage'))
+								if($input['porcentage'] > Config::get('constants.porcentage'))
 								{
-									if($input['price'] > Config::get('price'))
+									if($input['price'] > Config::get('constants.price'))
 									{
 										$schedule = new Schedule;
 
@@ -38,7 +39,6 @@ class ScheduleController extends BaseController {
 										$schedule->arrival_time 		= $input['arrival_time'];
 										$schedule->departure_airport 	= $input['departure_airport'];
 										$schedule->arrival_airport 		= $input['arrival_airport'];
-										$schedule->departure_airport 	= $input['departure_airport'];
 										$schedule->price 				= $input['price'];
 										$schedule->porcentage		 	= $input['porcentage'];
 										$schedule->max_days			 	= $input['max_days'];
@@ -76,7 +76,7 @@ class ScheduleController extends BaseController {
 				}
 				else
 				{
-					$response['status']['description'] = 'Max days must be greater than 0.';
+					$response['status']['description'] = 'Max days must be greater than '. Config::get('constants.max_days');
 				}
 			}
 			else
