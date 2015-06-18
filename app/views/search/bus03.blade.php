@@ -1,62 +1,6 @@
-<!DOCTYPE html>
-<html>
-		<head>
-			<meta charset="utf-8">
-			<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-			<link rel="stylesheet" href="css/bootstrap.min.css">
-			<link rel="stylesheet" href="css/jquery-ui.css">
-			<link rel="stylesheet" href="css/iconos.css">
-			<link rel="stylesheet" href="css/wan.css">
-			<link rel="stylesheet" href="css/bus03.css">
-			<script src="js/jquery.js"></script>
-			<script src="js/jquery-ui.min.js"></script>
-			<script src="js/bootstrap.min.js"></script>
-			<script src="js/wan.js"></script>
-			<title>Prueba WAN</title>
-			<script type="text/javascript">
-				$(window).load(function() {
-				$('.openfooter').openfooter({
-					barBg: 'transparent-deepsea'
-					});
-				})
-			</script>
-		</head>
-<body>
-	<div class="container-fluid">
-		<div class="row">
-			<nav class="navbar navbar-default col-xs-12">
-			  <div class="">
-			    <!-- Brand and toggle get grouped for better mobile display -->
-			    <div class="navbar-header">
-			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			        <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			      </button>
-			      <a class="navbar-brand" href="#">WAN</a>
-			    </div>
+@extends('layout.base')
 
-			    <!-- Collect the nav links, forms, and other content for toggling -->
-			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			      <ul class="nav navbar-nav">
-			        <li class="active"><a href="#">WAN Destinos <span class="sr-only">(current)</span></a></li>
-			        <li><a href="#">WAN Calendario</a></li>
-			        <li class="dropdown">
-			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">WAN Servicios<span class="caret"></span></a>
-			          <ul class="dropdown-menu" role="menu">
-			            <li><a href="#">WAN Courrier</a></li>
-			            <li class="divider"></li>
-			            <li><a href="#">WAN Terrestre</a></li>
-			            <li class="divider"></li>
-			            <li><a href="#">WAN Corporativo</a></li>
-			          </ul>
-			        </li>
-			      </ul>
-			    </div><!-- /.navbar-collapse -->
-			  </div><!-- /.container-fluid -->
-			</nav>
-		</div>
+@section('content')
 		<div class="tabla_1 center-block">
 			<h4 class="titulo">Itinerario</h4>
 			<table class="tabla_itinerario" id="id_tabla_itinerario" cellpadding="0" cellspacing="0">  
@@ -252,61 +196,59 @@
   		</table>
   		<div id="asistencia">
   			<h3 class="titulo	">RECOMENDADO: Seguro de viaje</h3>
-  		  	<table class="principal" id="id_tabla_compra_normal_asistencia" cellpadding="0" cellspacing="0">
-  			<tbody>
-  				<tr>
-    				<td><p class="asis-titulo">Viaja tranquilo, viaja protegido</p><p class="asis-bajada">Principales coberturas: Gastos médicos, cancelación de viaje, pérdida de equipaje, asistencia las 24 horas, entre otras.</p><p>No dejes que lo inesperado arruine tus vacaciones. LAN.com te ofrece la posibilidad de viajar protegido contra enfermedades, accidentes u otros imprevistos a través del <strong>seguro de viajes Pacífico</strong>.</p></td>
-    				<td><img src="http://s.lanstatic.com/es_pe/images/asistencia_viaje/promo_travel_assist.jpg" alt="Viaje tranquilo, viaje protegido" height="90" width="300"></td>
-  					</tr>
-  				<tr>
-    			<td colspan="2"><img src="http://s.lanstatic.com/es_pe/images/asistencia_viaje/logo_seguros_pacifico.gif" alt="Seguros Pacifico" class="logo" height="60" width="110">
-    
-	    			<table class="interior" cellpadding="0" cellspacing="0">
-	    				<colgroup>
-		    				<col width="5%">
-		    				<col width="80%">
-							<col width="15%">
-	    				</colgroup>
-	      				<tbody>
-	      					<tr>
-						        <td class="destacado"><input name="radio" id="asistencia_viaje" value="asistencia_viaje" type="radio"></td>
-						        <td class="destacado"><p><label for="asistencia_viaje"><strong>Sí, quiero contratar el seguro para todos los pasajeros de este viaje</strong></label></p></td>
-						        <td class="destacado-bottom"><strong id="qa_valor_asistencia">USD 91.00 * </strong>
-	        						<div id="following_tooltip" class="espaciado" ></div>
-	          						<div class="precio_referencial">
-		    							<label onmouseover="if (typeof(activa_ttip) != 'undefined') activa_ttip('id_ttip', 'tooltip_frase_variacion_poliza');" onmouseout="if (typeof(desactiva_ttip) != 'undefined') desactiva_ttip();">Precio total referencial
-		      								<div id="id_ttip" class="opcional">
-	            								<div class="middle">El precio del seguro incluye el Impuesto General a las Ventas (IGV) y puede variar según la edad del asegurado: para <b> menores de 12 años </b> aplica un descuento de hasta 50% si viaja acompañado de al menos 2 adultos. <b> A partir de los 70 años y hasta los 84 años </b> aplica un recargo de 10% si contrata el plan USA &amp; Canadá.
-	            								</div>
-	              							</div>
-		    							</label>
-	          						</div>
-	          					</td>
-	          				</tr>
-	      					<tr>
-	        					<td><input name="radio" id="asistencia_viaje2" value="asistencia_viaje2" type="radio"></td>
-	            				<td><p><label for="asistencia_viaje2">No deseo contratar el seguro de viaje</label></p></td>
-	        					<td>&nbsp;</td>
-	      					</tr>
-	    				</tbody>
-	    			</table>
-    			</td>
-  			</tr>
-  			<tr>
-	    		<td colspan="2"><a title="Revisa la cobertura y beneficios del plan" href="javascript:showLightbox('beneficios_asistencia');">Revisa la cobertura y beneficios del plan [+]</a></td>
-	  		</tr>
-	  		<tr>
-	    		<td colspan="2"><a title="Ver condiciones de contratación del seguro por Internet" href="/files/travel_assist/Condiciones_del_Servicio_en_la_Contratacion_del_Seguro_de_Viajes_por_Internet.pdf" target="_blank">Ver condiciones de contratación del seguro por Internet </a></td>
-	  		</tr>
-	  
-	  		<tr>
-	    		<td colspan="2" class="contacto">Si optas por contratar el seguro y presionas “continuar”, estarás manifestando expresa e inequívocamente tu voluntad de adquirir un seguro de viajes de Pacífico Seguros y de conocer de manera previa los términos y condiciones de dicho servicio. </td>
-	  		</tr>
-		</tbody>
-	</table>
-  	</div>
-		
-	</div>
+		  	<table class="principal" id="id_tabla_compra_normal_asistencia" cellpadding="0" cellspacing="0">
+	  			<tbody>
+	  				<tr>
+	    				<td><p class="asis-titulo">Viaja tranquilo, viaja protegido</p><p class="asis-bajada">Principales coberturas: Gastos médicos, cancelación de viaje, pérdida de equipaje, asistencia las 24 horas, entre otras.</p><p>No dejes que lo inesperado arruine tus vacaciones. LAN.com te ofrece la posibilidad de viajar protegido contra enfermedades, accidentes u otros imprevistos a través del <strong>seguro de viajes Pacífico</strong>.</p></td>
+	    				<td><img src="http://s.lanstatic.com/es_pe/images/asistencia_viaje/promo_travel_assist.jpg" alt="Viaje tranquilo, viaje protegido" height="90" width="300"></td>
+	  					</tr>
+	  				<tr>
+		    			<td colspan="2"><img src="http://s.lanstatic.com/es_pe/images/asistencia_viaje/logo_seguros_pacifico.gif" alt="Seguros Pacifico" class="logo" height="60" width="110">
+		    
+			    			<table class="interior" cellpadding="0" cellspacing="0">
+			    				<colgroup>
+				    				<col width="5%">
+				    				<col width="80%">
+									<col width="15%">
+			    				</colgroup>
+			      				<tbody>
+			      					<tr>
+								        <td class="destacado"><input name="radio" id="asistencia_viaje" value="asistencia_viaje" type="radio"></td>
+								        <td class="destacado"><p><label for="asistencia_viaje"><strong>Sí, quiero contratar el seguro para todos los pasajeros de este viaje</strong></label></p></td>
+								        <td class="destacado-bottom"><strong id="qa_valor_asistencia">USD 91.00 * </strong>
+			        						<div id="following_tooltip" class="espaciado" ></div>
+			          						<div class="precio_referencial">
+				    							<label onmouseover="if (typeof(activa_ttip) != 'undefined') activa_ttip('id_ttip', 'tooltip_frase_variacion_poliza');" onmouseout="if (typeof(desactiva_ttip) != 'undefined') desactiva_ttip();">Precio total referencial
+				      								<div id="id_ttip" class="opcional">
+			            								<div class="middle">El precio del seguro incluye el Impuesto General a las Ventas (IGV) y puede variar según la edad del asegurado: para <b> menores de 12 años </b> aplica un descuento de hasta 50% si viaja acompañado de al menos 2 adultos. <b> A partir de los 70 años y hasta los 84 años </b> aplica un recargo de 10% si contrata el plan USA &amp; Canadá.
+			            								</div>
+			              							</div>
+				    							</label>
+			          						</div>
+			          					</td>
+			          				</tr>
+			      					<tr>
+			        					<td><input name="radio" id="asistencia_viaje2" value="asistencia_viaje2" type="radio"></td>
+			            				<td><p><label for="asistencia_viaje2">No deseo contratar el seguro de viaje</label></p></td>
+			        					<td>&nbsp;</td>
+			      					</tr>
+			    				</tbody>
+			    			</table>
+		    			</td>
+		  			</tr>
+		  			<tr>
+			    		<td colspan="2"><a title="Revisa la cobertura y beneficios del plan" href="javascript:showLightbox('beneficios_asistencia');">Revisa la cobertura y beneficios del plan [+]</a></td>
+			  		</tr>
+			  		<tr>
+			    		<td colspan="2"><a title="Ver condiciones de contratación del seguro por Internet" href="/files/travel_assist/Condiciones_del_Servicio_en_la_Contratacion_del_Seguro_de_Viajes_por_Internet.pdf" target="_blank">Ver condiciones de contratación del seguro por Internet </a></td>
+			  		</tr>
+			  
+			  		<tr>
+			    		<td colspan="2" class="contacto">Si optas por contratar el seguro y presionas “continuar”, estarás manifestando expresa e inequívocamente tu voluntad de adquirir un seguro de viajes de Pacífico Seguros y de conocer de manera previa los términos y condiciones de dicho servicio. </td>
+			  		</tr>
+				</tbody>
+			</table>
+  		</div>
 	<script type="text/javascript">
 var $oculto=$('#tabla_cambio_moneda');
 function actualizar_moneda($valor){
@@ -331,5 +273,4 @@ function actualizar_moneda($valor){
 			});
 		})
 	</script>
-</body>
-</html>
+@endsection
