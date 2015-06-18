@@ -1,0 +1,13 @@
+.imagen> label, .elegir>input{
+	width: 100px;
+	text-align: center;
+}
+.imagen, .elegir{
+	width: 120px
+}
+.informacion>div{
+	display:none;
+}
+.opcion{
+	display: inline-block;
+}

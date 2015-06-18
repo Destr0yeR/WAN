@@ -1,0 +1,26 @@
+.elementos, .title{
+	display: inline-block;
+}
+.listar{
+	width: 410px;
+	margin:0 auto 0 auto;
+}
+.listar >div > div > div{
+	width: 410px;
+}
+.listar > div > .opciones > .head {
+	background: #476786;
+
+}
+.head>.title>label, .lista>.elementos>label{
+	text-align: center;
+	width: 120px;
+
+}
+}
+.mostrar{
+	float:right;
+}
+.lista:nth-child(2n){
+	background: #E7E7E7;
+}
