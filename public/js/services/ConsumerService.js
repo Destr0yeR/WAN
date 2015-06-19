@@ -8,7 +8,8 @@
     function factory($http, api_url) {
         var service = {
             func: func,
-            searchFlightAvailability: searchFlightAvailability
+            searchFlightAvailability: searchFlightAvailability,
+            checkSeats: checkSeats
         };
         return service;
         ////////////////
@@ -26,6 +27,12 @@
         		+'&type='+filters.type;
 
         	return $http.get(url);
+        }
+
+        function checkSeats(filters) {
+            var url = api_url + 'flights/seats?flight='+filters.id
+
+            return $http.get(url);
         }
     }
 })();

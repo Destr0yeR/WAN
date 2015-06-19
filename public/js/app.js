@@ -25,6 +25,9 @@
         }).
         when('/details', {
         	templateUrl: 'details'
+        }).
+        when('/seats', {
+            templateUrl: 'seats'
         });
    	}
 

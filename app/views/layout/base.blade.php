@@ -37,4 +37,6 @@
 	{{HTML::script('js/services/ConsumerService.js')}}
 	{{HTML::script('js/controllers/SearchController.js')}}
 	{{HTML::script('js/controllers/ScheduleController.js')}}
+	{{HTML::script('js/controllers/FlightDetailController.js')}}
+	{{HTML::script('js/controllers/SeatsController.js')}}
 </html>	

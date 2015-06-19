@@ -41,7 +41,10 @@
             ConsumerService.searchFlightAvailability(filters).success(function(data){
                 var schedule = {
                     avaible_departure: data.avaible_departure,
-                    available_return: data.available_return
+                    available_return: data.available_return,
+                    departure_airport: vm.departure_airport,
+                    arrival_airport: vm.arrival_airport,
+                    passengers: vm.passengers
                 }
                 Schedule.set(schedule);
                 $location.path('/results');

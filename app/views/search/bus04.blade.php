@@ -1,72 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/jquery-ui.css">
-	<link rel="stylesheet" href="css/iconos.css">
-	<link rel="stylesheet" href="css/wan.css">
-	<link rel="stylesheet" href="css/main.css">
-	<title>bus04</title>
-	<link rel="stylesheet" href="css/iconos2.css" type="text/css" />
-	<link rel="stylesheet" href="css/bus04.css" type="text/css" />
-	<link rel="stylesheet" href="css/wan.css" type="text/css" />
-</head>
-<body>
-	<div class="container-fluid">
-		<div class="row">
-			<nav class="navbar navbar-default col-xs-12">
-			 	<div class="">
-			    <!-- Brand and toggle get grouped for better mobile display -->
-			    	<div class="navbar-header">
-			      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				        	<span class="sr-only">Toggle navigation</span>
-				        	<span class="icon-bar"></span>
-				        	<span class="icon-bar"></span>
-				        	<span class="icon-bar"></span>
-			      		</button>
-			      		<a class="navbar-brand" href="#">WAN</a>
-			    	</div>
-				    <!-- Collect the nav links, forms, and other content for toggling -->
-				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				    	<ul class="nav navbar-nav">
-				        	<li class="active"><a href="#">WAN Destinos <span class="sr-only">(current)</span></a></li>
-				        	<li><a href="#">WAN Calendario</a></li>
-				        	<li class="dropdown">
-				          		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">WAN Servicios<span class="caret"></span></a>
-				          		<ul class="dropdown-menu" role="menu">
-				            		<li><a href="#">WAN Courrier</a></li>
-				            		<li class="divider"></li>
-				            		<li><a href="#">WAN Terrestre</a></li>
-				            		<li class="divider"></li>
-				            		<li><a href="#">WAN Corporativo</a></li>
-				          		</ul>
-				        	</li>
-				      	</ul>
-				    </div><!-- /.navbar-collapse -->
-				</div><!-- /.container-fluid -->
-			</nav>
-		</div>	
-		
-		<div class=" row viaje">
-			<div  class="vuelo col-md-5  col-md-offset-1 col-xs-10 col-xs-offset-1">
-				<h4 style="text-align:center">IDA</h4>
-				<div id="ida" class="avion">
-					
-				</div>
+<div ng-controller="SeatsController as vm">
+	<div class=" row viaje">
+		<div  class="vuelo col-md-5  col-md-offset-1 col-xs-10 col-xs-offset-1">
+			<h4 style="text-align:center">IDA</h4>
+			<div id="ida" class="avion">
+				
 			</div>
+		</div>
 
-			<div class="vuelo col-md-5  col-md-offset-1 col-xs-10 col-xs-offset-1">
-				<h4>VUELTA</h4>
-				<div id="vuelta"  class="avion">
-					
-				</div>
+		<div class="vuelo col-md-5  col-md-offset-1 col-xs-10 col-xs-offset-1">
+			<h4>VUELTA</h4>
+			<div id="vuelta"  class="avion">
+				
 			</div>
 		</div>
-		<div class="row">
-				<button class="seat-form-button" onclick="validar()" style="float:right" >Siguiente</button>			
-		</div>
+	</div>
+	<div class="row">
+			<button class="seat-form-button" onclick="validar()" style="float:right" >Siguiente</button>			
 	</div>
 
 	<div class="row">
@@ -123,5 +72,4 @@
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/wan.js"></script>
 	<script type="text/javascript" src="js/bus04.js"></script>
-</body>
-</html>
+</div>
