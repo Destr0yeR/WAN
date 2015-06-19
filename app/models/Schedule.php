@@ -13,4 +13,8 @@ class Schedule extends Eloquent {
 	public function arrival(){
 		return $this->belongsTo('Airport', 'arrival_airport', 'airport_id');
 	}
+	public function airplane(){
+		return $this->belongsTo('Airplane');
+	}
+
 }
