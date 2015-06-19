@@ -136,34 +136,43 @@ class SearchController extends BaseController {
 		
 		$validation = $this->validation_Input_Seats($input);
 		if(is_null($validation)){
-			$ocupied_seats = $this->searchOcupiedSeats($input['flight']);
-			$response['quantity'] = count($ocupied_seats);
+			$ocupied_seats = $this->searchOcupiedSeats($input['schedule'],$input['date']);
+			$response['total_quantity'] = $this->getTotalQuantity($input['schedule']);
+			$response['occupied_quantity'] = count($ocupied_seats);
 			$response['ocupied_seats'] = $ocupied_seats;
 			$response['status']['code'] = 200;
 			$response['status']['description'] = 'Operation Successfull';
 		}else{
 			$response['status']['code'] = 400;
 			$response['status']['description'] = $validation;
-		}
-		
-
-		
+		} 
 		return Response::json($response,$response['status']['code']);
 	}
 
-	public function searchOcupiedSeats($flightnumber)
+	public function searchOcupiedSeats($schedule,$date)
 	{
-		$flight = Flight::find($flightnumber);
-		$columns = array();
-		$rows = array();
-
-		foreach ($flight->passengers as $passengers) {
-			array_push($columns, $passengers->pivot->column);
-			array_push($rows, $passengers->pivot->row);
+		
+		$flight = Flight::where('schedule_id','=',$schedule)->where('date','=',$date)->first();
+		$ocupied_seats=array();
+		if(!is_null($flight))
+		{
+			$columns = array();
+			$rows = array();
+	
+			foreach ($flight->passengers as $passengers) {
+				array_push($columns, $passengers->pivot->column);
+				array_push($rows, $passengers->pivot->row);
+			}
+			$ocupied_seats = $this->createSeats($rows,$columns);			
 		}
-		$ocupied_seats = $this->createSeats($rows,$columns);
+		return $ocupied_seats;	
+	}
 
-		return $ocupied_seats;
+	public function getTotalQuantity($schedule)
+	{
+		$schedule = Schedule::where('id','=',$schedule)->with('Airplane')->first();
+
+		return $schedule->airplane->capacity;
 	}
 
 	public function createSeats($rows,$columns)
@@ -182,7 +191,8 @@ class SearchController extends BaseController {
 	public function validation_Input_Seats($input)
 	{
 		$validation = Validator::make($input,array(
-			'flight' => 'exists:flights,id'
+			'schedule' => 'exists:schedules,id',
+			'date' => 'date_format:Y-m-d'
 		));
 
 		if($validation->fails()){
