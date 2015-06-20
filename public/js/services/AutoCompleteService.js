@@ -13,7 +13,7 @@
 	 		var sort = 0;
 	 		var place_name = term;
 	 		var access_token = '';
-            console.log(term);
+            
 	 		var url = api_url+'airports/search?search_text='+term;
 
         	return $http.get(url).then(function(response){

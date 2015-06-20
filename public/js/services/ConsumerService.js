@@ -9,7 +9,8 @@
         var service = {
             func: func,
             searchFlightAvailability: searchFlightAvailability,
-            checkSeats: checkSeats
+            checkSeats: checkSeats,
+            createPassenger: createPassenger
         };
         return service;
         ////////////////
@@ -30,9 +31,23 @@
         }
 
         function checkSeats(filters) {
-            var url = api_url + 'flights/seats?flight='+filters.id
+            var url = api_url + 'flights/seats?'
+                    +'schedule='+filters.schedule
+                    +'&date='+filters.date
 
             return $http.get(url);
+        }
+
+        function createPassenger(filters) {
+            var url = api_url + '/flights/passengers';
+
+            var data = new FormData();
+            data.append('document_id', filters.document_id);
+            data.append('document_number', filters.document_number);
+            data.append('first_name', filters.first_name);
+            data.append('last_name', filters.last_name);
+
+            return $http.post(url, data, {transformRequest: angular.identity,headers: {'Content-Type': undefined}});
         }
     }
 })();

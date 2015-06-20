@@ -30,6 +30,8 @@
             vm.departure_airport = vm.flight.departure_airport;
             vm.arrival_airport = vm.flight.arrival_airport;
             vm.passengers = vm.flight.passengers
+            vm.departure_date = vm.flight.departure_date;
+            vm.return_date = vm.flight.return_date;
 
             console.log(vm.flight);
 
@@ -38,6 +40,7 @@
 
             vm.sub_total = vm.passenger_price * vm.passengers;
             vm.total_taxes = vm.taxes * vm.passengers;
+
             vm.total = vm.sub_total + vm.total_taxes;
         }
 
@@ -49,10 +52,9 @@
                 if(!$('#tabla_cambio_moneda').is (':visible')){
                     $('#tabla_cambio_moneda').show();
                 } 
-                console.log(vm.currency);
-                console.log(vm.tipo_moneda);
-                console.log(vm.currency[vm.tipo_moneda]);
+
                 vm.exchange.text = vm.currency[vm.tipo_moneda].text;
+
                 vm.exchange.value = parseFloat(vm.currency[vm.tipo_moneda].value) * vm.total;
             }
         }

@@ -10,12 +10,13 @@
 	position:relative;
 }
 .ast_txt{
-	display:table-cell;
-	font-size: 8px;
-	text-align:center;
-	overflow:hidden;
-	position:relative;
-	vertical-align:bottom;
+	display: table-cell;
+	font-size: 13px;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+	vertical-align: bottom;
+	padding-left: 10px;
 }
 .icn_efect{
 	transition-property: text-shadow, color, background;
@@ -36,4 +37,16 @@
 }
 .verde{
 	background: #01DF01;
+}
+
+.group{
+	text-align: center;
+}
+
+span.ast_icn.icon-squared-plus.available{
+	color: green;
+}
+
+span.ast_icn.icon-squared-plus.occupied{
+	color: red;
 }

@@ -19,12 +19,17 @@
         ////////////////
         function activate() {
         	vm.schedules  = Schedule.get();
-            vm.avaible_departure = vm.schedules.avaible_departure;
-            vm.available_return = vm.schedules.available_return;
-            vm.departure_airport = vm.schedules.departure_airport;
-            vm.arrival_airport = vm.schedules.arrival_airport;
-            vm.pasajeros = vm.schedules.passengers;
-            console.log(vm.available_return);
+            if(!isEmpty(vm.schedules)){
+                console.log(vm.schedules);
+                vm.avaible_departure = vm.schedules.avaible_departure;
+                vm.available_return = vm.schedules.available_return;
+                vm.departure_airport = vm.schedules.departure_airport;
+                vm.arrival_airport = vm.schedules.arrival_airport;
+                vm.pasajeros = vm.schedules.passengers;
+                vm.departure_date = vm.schedules.departure_date;
+                vm.return_date = vm.schedules.return_date;
+            }
+
         }
 
         vm.setDepartureAirport = function(airport) {
@@ -54,7 +59,9 @@
                     available_return: data.available_return,
                     departure_airport: vm.departure_airport,
                     arrival_airport: vm.arrival_airport,
-                    passengers: vm.pasajeros
+                    passengers: vm.pasajeros,
+                    return_date: vm.return_date,
+                    departure_date: vm.departure_date
                 }
                 Schedule.set(schedule);
                 activate();
@@ -68,7 +75,9 @@
                 option_return: vm.option_return,
                 departure_airport: vm.departure_airport,
                 arrival_airport: vm.arrival_airport,
-                passengers: vm.pasajeros
+                passengers: vm.pasajeros,
+                departure_date: vm.departure_date,
+                return_date: vm.return_date
             }
 
             Fligth.set(flight);
@@ -82,6 +91,15 @@
 
         vm.setOptionDeparture = function(option) {
             vm.option_departure = option;
+        }
+
+        function isEmpty(obj) {
+            for(var key in obj){
+                if(obj.hasOwnProperty(key)){
+                    return false;
+                }
+            }
+            return true;
         }
     }
 })();

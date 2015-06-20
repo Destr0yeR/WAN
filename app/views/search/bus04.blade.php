@@ -2,69 +2,36 @@
 	<div class=" row viaje">
 		<div  class="vuelo col-md-5  col-md-offset-1 col-xs-10 col-xs-offset-1">
 			<h4 style="text-align:center">IDA</h4>
-			<div id="ida" class="avion">
-				
+			<div class="avion">
+				<div class="group">
+					<div ng-repeat="row in vm.seats_departure" class="filas" style="font-size: 30px">
+						<div ng-repeat="column in row" class="asiento icn_efect">
+							<span class="ast_icn icon-squared-plus" ng-class="column.occupied?'occupied':'available'"></span>
+							<span class="ast_txt"><%column.column%> - <%column.row%></span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
 		<div class="vuelo col-md-5  col-md-offset-1 col-xs-10 col-xs-offset-1">
 			<h4>VUELTA</h4>
-			<div id="vuelta"  class="avion">
-				
+			<div class="avion">
+				<div class="group">
+					<div ng-repeat="row in vm.seats_return" class="filas" style="font-size: 30px">
+						<div ng-repeat="column in row" class="asiento icn_efect">
+							<span class="ast_icn icon-squared-plus" ng-class="column.occupied?'occupied':'available'"></span>
+							<span class="ast_txt"><%column.column%> - <%column.row%></span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 	<div class="row">
-			<button class="seat-form-button" onclick="validar()" style="float:right" >Siguiente</button>			
+			<button class="seat-form-button" style="float:right" >Next</button>			
 	</div>
 
-	<div class="row">
-		<footer >
-			<div  class="ft_inicial">
-				<div  class="ft_todo">
-					<div class="ft_item" style="display:none" onclick="anterior()">
-						<span class="it_icn"><i class="it_fnt icon-facebook" ></i></span>
-					</div>	
-					<div  class="opciones">
-			
-						<div id="work_icn" class="ft_item icn_efect" onclick="extender(this.id)">
-							<span class="it_icn"><i class="it_fnt icon-user" ></i></span>
-							<span class="it_txt">Trabajo</span>
-						</div>
-						<div  id="faq_icn" class="ft_item icn_efect" onclick="extender(this.id)" >
-							<span class="it_icn"><i class="it_fnt  icon-user2"></i></span>
-							<span class="it_txt">FAQ</span>
-						</div>
-					</div>
-					<div class="ft_item " style="display:none" onclick="siguiente()">
-						<span class="it_icn"><i class="it_fnt icon-airplane" ></i></span>
-					</div>
-				</div>
-			</div>
-			<div class="ft_extendido">
-				<div class="ft_contenido">
-					<div id="work_info" class="ft_bloque">
-						<p class="bloque_t">
-							Trabajo
-						</p>
-									
-						<p class="bloque_txt">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus risus quis turpis interdum, pretium bibendum nisi consequat. Integer eu neque fringilla, adipiscing ante vitae, volutpat enim. Ut a metus tempor, dapibus justo quis, tempor sapien. Morbi sagittis luctus velit, vel tincidunt lacus vulputate vitae. Suspendisse ut lectus justo. Curabitur vel dui quis nisl adipiscing vestibulum quis id risus. Donec et consectetur sapien. Mauris ac pulvinar neque, nec imperdiet mauris. Proin nec felis nec neque ultricies molestie. Phasellus ante elit, feugiat vitae convallis eget, sollicitudin ac nisi.
-							</p>
-					</div>
-
-					<div id="faq_info" class="ft_bloque">
-						<p class="bloque_t">
-							FAQ
-						</p>
-						<p class="bloque_txt">
-							Donec et varius erat. Maecenas eget velit nisi. Etiam eleifend nibh augue, quis semper nulla semper vitae. Curabitur cursus lectus nec eros venenatis, sed porttitor nibh tempor. Vivamus vestibulum justo quis dui fermentum malesuada. Etiam in iaculis nibh, vel dignissim ipsum. Donec volutpat imperdiet mi, a pulvinar erat vestibulum ut. Phasellus ac pulvinar nibh, a bibendum nisl. Maecenas ut leo sit amet lorem fringilla placerat sed a enim. Curabitur vulputate luctus mi, lacinia semper justo rhoncus eget. Duis odio diam, ultricies non lacinia sit amet, interdum et lectus. Donec cursus nulla sed elit molestie rhoncus.
-						</p>
-					</div>
-				</div>
-			</div>
-		</footer>
-	</div>
 		
 
 	<script type="text/javascript" src="js/jquery.js"></script>
