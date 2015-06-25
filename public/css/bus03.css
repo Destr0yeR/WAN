@@ -27,15 +27,15 @@
 		background: #FFFFFF; 
 		font: 11px Arial, Helvetica, sans-serif; 
 		color: #333; 
-		text-align: left; 
-		vertical-align: text-top
+		text-align: middle; 
+		vertical-align:middle;
 	}
 	.celda_pasajero{
 		height: 27px; 
 		font: normal 12px Arial, sans-serif; 
 		color: #333; 
-		text-align: right; 
-		vertical-align: text-top
+		text-align: middle; 
+		vertical-align: middle;
 	}
 	.celda_tp{
 		white-space: nowrap; 
@@ -49,7 +49,7 @@
 	}
 	
 	.costo{
-		text-align: right;
+		text-align: center;
 		padding: 0 8px 0 8px;
 	}
 	.cursiva{
@@ -64,7 +64,8 @@
 	.info{
 		border-right: 1px solid #041D35;
 		font-weight: normal;
-		padding: 4px 0 0 5px
+		padding: 4px 0 0 5px;
+		vertical-align:middle;
 
 	}
 	.izquierda{
@@ -90,7 +91,8 @@
 	.info_dinamica{
 		padding: 4px 0 5px 5px;
 		border: 1px solid #041D35;
-		font-weight: normal
+		font-weight: normal;
+		vertical-align: middle;
 	}
 	.letra{
 		font-size: 0.875em
@@ -129,7 +131,10 @@
 		padding: 6px 4px 6px 8px; 
 		font-family:Arial, Helvetica, sans-serif
 	}
-	/*
+	.asist-table{
+		border:1px solid #294B6C;
+	}
+
 VERDE
 .color-primary-0 { color: #36882D }	
 .color-primary-1 { color: #8DCD86 }
@@ -148,4 +153,3 @@ AMARILLO DESCOMPUESTO
 .color-secondary-2-2 { color: #C0CA63 }
 .color-secondary-2-3 { color: #707A15 }
 .color-secondary-2-4 { color: #495100 }
-*/

@@ -1,4 +1,5 @@
 <div ng-controller="FlightDetailController as vm">
+
 	<div class="tabla_1 center-block">
 		<h4 class="titulo">Itinerario</h4>
 		<table class="tabla_itinerario" id="id_tabla_itinerario" cellpadding="0" cellspacing="0">  
@@ -65,25 +66,7 @@
     	<tbody>
     		<tr>
       			<td>
-        			<div>
-		  				<div id="tabla_cambio_moneda" class="opcional">
-		  					<h4 class="titulo">Tarifa referencial</h4>
-								<table class="table" cellpadding="0" cellspacing="0" width="100%">
-									<tbody>
-										<tr> 
-											<th>&nbsp;</th>
-											<th class="costo derecha">Moneda</th>
-											<th class="costo derecha">Total</th>
-										</tr>
-										<tr class="no-par" id="fila_valor_referencial"> 
-											<td>Valor referencial</td>
-											<td class="right p_tamano" ><strong><%vm.exchange.text%></strong></td>
-											<td class="right p_tamano" ><strong><%vm.exchange.value | number:2%></strong></td>
-										</tr>
-									</tbody>
-								</table>
-						</div>
-          
+        			<div>        
 
 						<h4 class="titulo">Tarifa en dólares americanos</h4>
 
@@ -108,10 +91,28 @@
 							        <td class="costo"></td>
 							        <td class="costo"><%vm.sub_total | currency:"USD$":2%></td>
 							        <td class="costo"><%vm.total_taxes | currency:"USD$":2%></td>        
-							        <td id="id_monto_total_cotizacion" class="costo cursiva" ><%vm.total | currency%></td>
+							        <td id="id_monto_total_cotizacion" class="costo cursiva" style="text-align:right"><%vm.total | currency%></td>
 	    						</tr>
 							</tbody>
 						</table>
+
+						<div id="tabla_cambio_moneda" class="opcional">
+		  					<h4 class="titulo">Tarifa referencial</h4>
+								<table class="table" cellpadding="0" cellspacing="0" width="100%">
+									<tbody>
+										<tr> 
+											<th>&nbsp;</th>
+											<th class="costo derecha">Moneda</th>
+											<th class="costo derecha">Total</th>
+										</tr>
+										<tr class="no-par" id="fila_valor_referencial"> 
+											<td>Valor referencial</td>
+											<td class="right p_tamano" ><strong><%vm.exchange.text%></strong></td>
+											<td class="right p_tamano" ><strong><%vm.exchange.value | number:2%></strong></td>
+										</tr>
+									</tbody>
+								</table>
+						</div>
 						<input name="moneda" value="USD" type="hidden">
 						<input id="monto_total_sin_moneda" name="monto" value="1723.26" type="hidden">
 					</div>
@@ -153,61 +154,61 @@
 	</table>
 		<div id="asistencia">
 			<h3 class="titulo	">RECOMENDADO: Seguro de viaje</h3>
-	  	<table class="principal" id="id_tabla_compra_normal_asistencia" cellpadding="0" cellspacing="0">
-  			<tbody>
-  				<tr>
-    				<td><p class="asis-titulo">Viaja tranquilo, viaja protegido</p><p class="asis-bajada">Principales coberturas: Gastos médicos, cancelación de viaje, pérdida de equipaje, asistencia las 24 horas, entre otras.</p><p>No dejes que lo inesperado arruine tus vacaciones. LAN.com te ofrece la posibilidad de viajar protegido contra enfermedades, accidentes u otros imprevistos a través del <strong>seguro de viajes Pacífico</strong>.</p></td>
-    				<td><img src="http://s.lanstatic.com/es_pe/images/asistencia_viaje/promo_travel_assist.jpg" alt="Viaje tranquilo, viaje protegido" height="90" width="300"></td>
-  					</tr>
-  				<tr>
-	    			<td colspan="2"><img src="http://s.lanstatic.com/es_pe/images/asistencia_viaje/logo_seguros_pacifico.gif" alt="Seguros Pacifico" class="logo" height="60" width="110">
-	    
-		    			<table class="interior" cellpadding="0" cellspacing="0">
-		    				<colgroup>
-			    				<col width="5%">
-			    				<col width="80%">
-								<col width="15%">
-		    				</colgroup>
-		      				<tbody>
-		      					<tr>
-							        <td class="destacado"><input name="radio" id="asistencia_viaje" value="asistencia_viaje" type="radio"></td>
-							        <td class="destacado"><p><label for="asistencia_viaje"><strong>Sí, quiero contratar el seguro para todos los pasajeros de este viaje</strong></label></p></td>
-							        <td class="destacado-bottom"><strong id="qa_valor_asistencia">USD 91.00 * </strong>
-		        						<div id="following_tooltip" class="espaciado" ></div>
-		          						<div class="precio_referencial">
-			    							<label onmouseover="if (typeof(activa_ttip) != 'undefined') activa_ttip('id_ttip', 'tooltip_frase_variacion_poliza');" onmouseout="if (typeof(desactiva_ttip) != 'undefined') desactiva_ttip();">Precio total referencial
-			      								<div id="id_ttip" class="opcional">
-		            								<div class="middle">El precio del seguro incluye el Impuesto General a las Ventas (IGV) y puede variar según la edad del asegurado: para <b> menores de 12 años </b> aplica un descuento de hasta 50% si viaja acompañado de al menos 2 adultos. <b> A partir de los 70 años y hasta los 84 años </b> aplica un recargo de 10% si contrata el plan USA &amp; Canadá.
-		            								</div>
-		              							</div>
-			    							</label>
-		          						</div>
-		          					</td>
-		          				</tr>
-		      					<tr>
-		        					<td><input name="radio" id="asistencia_viaje2" value="asistencia_viaje2" type="radio"></td>
-		            				<td><p><label for="asistencia_viaje2">No deseo contratar el seguro de viaje</label></p></td>
-		        					<td>&nbsp;</td>
-		      					</tr>
-		    				</tbody>
-		    			</table>
-	    			</td>
-	  			</tr>
-	  			<tr>
-		    		<td colspan="2"><a title="Revisa la cobertura y beneficios del plan" href="javascript:showLightbox('beneficios_asistencia');">Revisa la cobertura y beneficios del plan [+]</a></td>
-		  		</tr>
-		  		<tr>
-		    		<td colspan="2"><a title="Ver condiciones de contratación del seguro por Internet" href="/files/travel_assist/Condiciones_del_Servicio_en_la_Contratacion_del_Seguro_de_Viajes_por_Internet.pdf" target="_blank">Ver condiciones de contratación del seguro por Internet </a></td>
-		  		</tr>
-		  
-		  		<tr>
-		    		<td colspan="2" class="contacto">Si optas por contratar el seguro y presionas “continuar”, estarás manifestando expresa e inequívocamente tu voluntad de adquirir un seguro de viajes de Pacífico Seguros y de conocer de manera previa los términos y condiciones de dicho servicio. </td>
-		  		</tr>
-			</tbody>
-		</table>
+		  	<table class="asist-table" id="id_tabla_compra_normal_asistencia" cellpadding="0" cellspacing="0">
+	  			<tbody>
+	  				<tr>
+	    				<td><p class="asis-titulo">Viaja tranquilo, viaja protegido</p><p class="asis-bajada">Principales coberturas: Gastos médicos, cancelación de viaje, pérdida de equipaje, asistencia las 24 horas, entre otras.</p><p>No dejes que lo inesperado arruine tus vacaciones. LAN.com te ofrece la posibilidad de viajar protegido contra enfermedades, accidentes u otros imprevistos a través del <strong>seguro de viajes Pacífico</strong>.</p></td>
+	    				<td><img src="http://s.lanstatic.com/es_pe/images/asistencia_viaje/promo_travel_assist.jpg" alt="Viaje tranquilo, viaje protegido" height="90" width="300"></td>
+					</tr>
+	  				<tr>
+		    			<td colspan="2"><img src="http://s.lanstatic.com/es_pe/images/asistencia_viaje/logo_seguros_pacifico.gif" alt="Seguros Pacifico" class="logo" height="60" width="110">
+		    
+			    			<table class="interior" cellpadding="0" cellspacing="0">
+			    				<colgroup>
+				    				<col width="5%">
+				    				<col width="80%">
+									<col width="15%">
+			    				</colgroup>
+			      				<tbody>
+			      					<tr>
+								        <td class="destacado"><input name="radio" id="asistencia_viaje" value="asistencia_viaje" type="radio"></td>
+								        <td class="destacado"><p><label for="asistencia_viaje"><strong>Sí, quiero contratar el seguro para todos los pasajeros de este viaje</strong></label></p></td>
+								        <td class="destacado-bottom"><strong id="qa_valor_asistencia">USD 91.00 * </strong>
+			        						<div id="following_tooltip" class="espaciado" ></div>
+			          						<div class="precio_referencial">
+				    							<label onmouseover="if (typeof(activa_ttip) != 'undefined') activa_ttip('id_ttip', 'tooltip_frase_variacion_poliza');" onmouseout="if (typeof(desactiva_ttip) != 'undefined') desactiva_ttip();">Precio total referencial
+				      								<div id="id_ttip" class="opcional">
+			            								<div class="middle">El precio del seguro incluye el Impuesto General a las Ventas (IGV) y puede variar según la edad del asegurado: para <b> menores de 12 años </b> aplica un descuento de hasta 50% si viaja acompañado de al menos 2 adultos. <b> A partir de los 70 años y hasta los 84 años </b> aplica un recargo de 10% si contrata el plan USA &amp; Canadá.
+			            								</div>
+			              							</div>
+				    							</label>
+			          						</div>
+			          					</td>
+			          				</tr>
+			      					<tr>
+			        					<td><input name="radio" id="asistencia_viaje2" value="asistencia_viaje2" type="radio"></td>
+			            				<td><p><label for="asistencia_viaje2">No deseo contratar el seguro de viaje</label></p></td>
+			        					<td>&nbsp;</td>
+			      					</tr>
+			    				</tbody>
+			    			</table>
+		    			</td>
+		  			</tr>
+		  			<tr>
+			    		<td colspan="2"><a title="Revisa la cobertura y beneficios del plan" href="javascript:showLightbox('beneficios_asistencia');">Revisa la cobertura y beneficios del plan [+]</a></td>
+			  		</tr>
+			  		<tr>
+			    		<td colspan="2"><a title="Ver condiciones de contratación del seguro por Internet" href="/files/travel_assist/Condiciones_del_Servicio_en_la_Contratacion_del_Seguro_de_Viajes_por_Internet.pdf" target="_blank">Ver condiciones de contratación del seguro por Internet </a></td>
+			  		</tr>
+			  
+			  		<tr>
+			    		<td colspan="2" class="contacto">Si optas por contratar el seguro y presionas “continuar”, estarás manifestando expresa e inequívocamente tu voluntad de adquirir un seguro de viajes de Pacífico Seguros y de conocer de manera previa los términos y condiciones de dicho servicio. </td>
+			  		</tr>
+				</tbody>
+			</table>
 	</div>
 	<div class="row">
-		<div class="col-sm-8 col-sm-offset-2">
+		<div class="col-sm-2 col-sm-offset-11">
 			<button type="button" class="search-form-button" ng-click="vm.next()">Next</button>
 		</div>
 	</div>

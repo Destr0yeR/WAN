@@ -1,48 +1,56 @@
 <div ng-controller="ScheduleController as vm">
 			
 	<div class="row" >
-		<div class="col-xs-10  col-xs-offset-1 search-container">
-			<div class="col-xs-10 col-md-5 col-xs-offset-1 col-md-offset-1 search-form " action="">
+		<div class="col-xs-10  col-xs-offset-1">
+			<div class="col-xs-10 col-md-10 col-xs-offset-1 col-md-offset-1 results-search-form" action="">
 				<div class="row">
-					<label class="col-xs-11 col-xs-offset-1 search-form-title" for="nombre">Compra de Pasajes</label>
+					<label class="col-xs-12  result-search-form-title" for="nombre">Vuelva a Buscar</label>
 				</div>
 				<div class="row" style="margin-top:5px;margin-bottom:10px">
 					<div class="form-group">
-						<label class="col-xs-6 "> <input id="on" type="radio" name="optradio">Ida y Vuelta</label>
-						<label class="col-xs-6 "> <input id="off" type="radio" name="optradio">Solo Ida</label>
+						<label class="col-xs-2 col-xs-offset-4 "> <input id="on" type="radio" name="optradio">Ida y Vuelta</label>
+						<label class="col-xs-2 "> <input id="off" type="radio" name="optradio">Solo Ida</label>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-xs-12">
-						<input type="text" class="search-form-place" value="" placeholder="Ciudad de Origen" autocompletedepartureairport id="tags1" ng-model="vm.departure_airport.name" style="margin-bottom:10px">
+					<div class="col-xs-6">
+						<input type="text" class="result-search-form-place" value="" placeholder="Ciudad de Origen" autocompletedepartureairport id="tags1" ng-model="vm.departure_airport.name" style="margin-bottom:10px">
 					</div>
-					<div class="col-xs-12">
-						<input type="text" class="search-form-place" value="" placeholder="Ciudad de Destino" autocompletearrivalairport id="tags2" ng-model="vm.arrival_airport.name" style="margin-bottom:10px">
+					<div class="col-xs-6">
+						<input type="text" class="result-search-form-place" style="margin-left:30px!important;"value="" placeholder="Ciudad de Destino" autocompletearrivalairport id="tags2" ng-model="vm.arrival_airport.name" style="margin-bottom:10px">
 					</div>
 				</div>	
 				<div class="row" style="margin-top:10px">
-					<div class="col-xs-6" style="padding-right:5px">
-						<input class="search-form-date" type="text" id="datepickerSalida" placeholder="Fecha Salida" ng-model="vm.departure_date">
+					<div class="col-xs-3" >
+						<input class="result-search-form-date" type="text" id="datepickerSalida" placeholder="Fecha Salida" ng-model="vm.departure_date">
 					</div>
-					<div class="col-xs-6 fecha-vuelta" style="padding-left:5px">
-						<input class="search-form-date" type="text" id="datepickerRetorno" placeholder="Fecha Retorno" ng-model="vm.return_date">
+					<div class="col-xs-3 fecha-vuelta">
+						<input class="result-search-form-date" type="text" id="datepickerRetorno" placeholder="Fecha Retorno" ng-model="vm.return_date">
 					</div>
-				</div>
-				<div style="padding:10px;padding-bottom:0px">
-					N.Pasajeros <input class="row search-form-spinner" id="numPass" name="pasajeros" type="spinner" min="1" max="5" ng-model="vm.pasajeros"/>
-				</div>
-
-				<div  class="row">
-					<input class="search-form-button col-xs-12" type="button" value="Buscar Vuelo" ng-click="vm.searchFlights()">
+					<div class="col-xs-offset-1 col-xs-2" style="padding:10px;padding-bottom:0px;">
+						Psj. <input class="result-search-form-spinner" style="width:50px" id="numPass" name="pasajeros" type="spinner" min="1" max="5" ng-model="vm.pasajeros"/>
+					</div>
+					<div class="col-xs-offset-1 col-xs-2">
+						<input class="result-search-form-button" type="button" value="Buscar Vuelo" ng-click="vm.searchFlights()">
+					</div>
+					
 				</div>
 				<input type="hidden" ng-model="vm.ida_y_vuelta" id="ida_y_vuelta">
 			</div>
-		</div>	
+		</div>
 	</div>
 
 <div class="row listar">
+	<div class="row">
+		<label class="col-xs-12  result-search-form-title" for="nombre">Resultados De Su Busqueda</label>
+	</div>
 	<div class="ida">
-		<h4 class="titulo">Ruta <strong>IDA</strong> <label for="" class="origen">Lima</label>-<label for="" class="destino">Huaraz</label></h4>
+		<div class="row">
+			<div class="col-xs-12">
+				<h4 class="titulo">Ruta <strong>IDA</strong> <label for="" class="origen">Lima</label>-<label for="" class="destino">Huaraz</label></h4>
+			</div>
+		</div>
+		
 		<div class="opciones">
 			<div class="head">
 				<div class="vacio"></div>
@@ -78,8 +86,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="vuelta">
-		<button type="button" class="search-form-button" ng-click="vm.next()">NEXT</button>
+	<div>
+		<button type="button" class="search-form-button col-xs-offset-12 col-xs-2" ng-click="vm.next()">NEXT</button>
 	</div>
 </div>
 			<script>

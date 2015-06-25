@@ -1,8 +1,9 @@
 <div ng-controller="SeatsController as vm">
-	<div class=" row viaje">
+
+	<div class=" row viaje plane-container">
 		<div  class="vuelo col-md-5  col-md-offset-1 col-xs-10 col-xs-offset-1">
-			<h4 style="text-align:center">IDA</h4>
-			<div class="avion">
+			<h4 style="text-align:center" class="titulo">IDA</h4>
+			<div class="avion" style="margin-bottom:10px">
 				<div class="group">
 					<div ng-repeat="row in vm.seats_departure" class="filas" style="font-size: 30px">
 						<div ng-repeat="column in row" class="asiento icn_efect">
@@ -14,8 +15,8 @@
 			</div>
 		</div>
 
-		<div class="vuelo col-md-5  col-md-offset-1 col-xs-10 col-xs-offset-1">
-			<h4>VUELTA</h4>
+		<div class="vuelo col-md-5  col-xs-10 col-xs-offset-1">
+			<h4 style="text-align:center" class="titulo">VUELTA</h4>
 			<div class="avion">
 				<div class="group">
 					<div ng-repeat="row in vm.seats_return" class="filas" style="font-size: 30px">
@@ -28,6 +29,7 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="row">
 			<button class="seat-form-button" style="float:right" >Next</button>			
 	</div>
