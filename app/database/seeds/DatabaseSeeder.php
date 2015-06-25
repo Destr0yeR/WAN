@@ -16,6 +16,9 @@ class DatabaseSeeder extends Seeder {
 		$this->call('CitySeeder');
 		$this->call('AirplaneSeeder');
 		$this->call('AirportSeeder');
+		$this->call('ScheduleSeeder');
+		$this->call('UserTypeSeeder');
+		$this->call('UserSeeder');
 	}
 
 }

@@ -45,4 +45,65 @@ class AirportController extends BaseController {
 
 		return $new;
 	}
+
+
+
+	/////
+
+
+
+	public function index() {
+		$airports = Airport::paginate(Config::get('constants.pagination'));
+
+		$data = [
+			'airports'	=> $airports,
+			'search' 	=> false
+		];
+
+		return View::make('backend.airport.index', $data);
+	}
+
+	public function newAirport() {
+
+		$countries = Country::lists('name','id');
+
+		$data = [
+			'countries'	=> [0 =>'Seleccione un pais (No elegir si es nuevo)'] +$countries
+		];
+
+		return View::make('backend.airport.create', $data);
+	}
+
+	public function newStore() {
+		$input = Input::all();
+
+		$country = Country::find(isset($input['country'])?$input['country']:0);
+
+		if(!$country) {
+			$country = new Country;
+			$country->name = $input['country_name'];
+
+			$country->save();
+		}
+
+		$city = City::find(isset($input['city'])?$input['city']:0);
+
+		if(!$city) {
+			$city = new City;
+			$city->name = $input['city_name'];
+			$city->country_id = $country->id;
+
+			$city->save();
+		}
+
+
+		$airport = new Airport;
+
+		$airport->name = $input['airport_name'];
+		$airport->city_id = $city->id;
+
+		$airport->save();
+
+		return Redirect::back()->with('message', 'Destino Creado');
+	}
 }
