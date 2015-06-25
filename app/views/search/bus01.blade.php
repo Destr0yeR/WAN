@@ -31,7 +31,7 @@
 			</div>
 
 			<div  class="row">
-				<input class="search-form-button col-xs-12" type="button" value="Buscar Vuelo" style="float:right" ng-click="vm.searchFlights()">
+				<input class="search-form-button col-xs-offset-8 col-xs-3" type="button" value="Buscar Vuelo"ng-click="vm.searchFlights()">
 			</div>
 			<input type="hidden" ng-model="vm.ida_y_vuelta" id="ida_y_vuelta">
 		</div>

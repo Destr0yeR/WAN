@@ -15,7 +15,7 @@
 	text-align: center;
 	overflow: hidden;
 	position: relative;
-	vertical-align: bottom;
+	vertical-align: text-top;
 	padding-left: 10px;
 }
 .icn_efect{
@@ -49,4 +49,7 @@ span.ast_icn.icon-squared-plus.available{
 
 span.ast_icn.icon-squared-plus.occupied{
 	color: red;
+}
+.plane-container {
+	background-image: url('../img/sky.jpg');
 }

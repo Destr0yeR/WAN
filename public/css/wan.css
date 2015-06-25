@@ -190,6 +190,61 @@ footer {
 	margin-bottom:35px;
 	border-radius: 10px;
 }
+.result-search-form-title
+{
+	background-color: #476786;
+	text-align: center;
+	margin-left:20px;
+	margin-right:20px;
+	margin-top:10px;
+	margin-bottom:10px;
+	border-radius: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color:white;
+}
+.result-search-form-place
+{
+	background-color: #F3F3F3;
+	border-radius: 10px;
+	padding:10px;
+	text-align:center;
+	color:black;
+	width: 100%;
+}
+.result-search-form-date
+{
+	background-color: #F3F3F3;
+	border-radius: 10px;
+	padding:10px;
+	text-align:center;
+	color:black;
+	width: 100%;
+}
+.result-search-form-spinner
+{
+	background-color: #F3F3F3!important;
+	text-align: center;
+}
+.result-search-form-button
+{
+	background-color:#C0CA63 !important;
+	padding: 10px;
+	text-align: center;
+	border-radius: 5px;
+	font-weight: bolder;
+	margin-bottom:10px;
+}
+.seat-form-button
+{
+	background-color:#C0CA63 !important;
+	padding: 10px;
+	text-align: center;
+	border-radius: 5px;
+	font-weight: bolder;
+	margin-right: 10px;
+	margin-bottom:10px;
+}
 .search-form-title
 {
 	background-color: #476786;
@@ -210,20 +265,20 @@ footer {
 	padding:10px;
 	text-align:center;
 	color:black;
-	width: 100%;
+	width: 100%
 }
 .search-form-date
 {
-	background-color:white;
+	background-color: white;
 	border-radius: 10px;
 	padding:10px;
 	text-align:center;
 	color:black;
-	width:100%;
+	width: 100%;
 }
 .search-form-spinner
 {
-	background-color:white!important;
+	background-color: white!important;
 	margin: 0px;
 	text-align: center;
 }
@@ -249,24 +304,24 @@ footer {
 }
 ::-webkit-input-placeholder { /* WebKit browsers */
 	opacity: 1;
-    color:  black;
+    color:  black !important;
     border-color: blue;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    black;
+   color:    black !important;
    opacity:  1;
    border-color: blue;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    black;
+   color:    black !important;
    opacity:  1;
    border-color: blue;
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-   color:    black;
+   color:    black !important;
    border-color: blue;
 }
-/*
+
 VERDE
 .color-primary-0 { color: #36882D }	
 .color-primary-1 { color: #8DCD86 }
@@ -285,4 +340,3 @@ AMARILLO DESCOMPUESTO
 .color-secondary-2-2 { color: #C0CA63 }
 .color-secondary-2-3 { color: #707A15 }
 .color-secondary-2-4 { color: #495100 }
-*/

@@ -1,8 +1,9 @@
 .elementos, .title{
 	display: inline-block;
+	color: black;
 }
 .listar{
-	width: 410px;
+	width: 30%;
 	margin:0 auto 0 auto;
 }
 .listar >div > div > div{
@@ -12,15 +13,33 @@
 	background: #476786;
 
 }
-.head>.title>label, .lista>.elementos>label{
+.head>.title>label{
 	text-align: center;
 	width: 120px;
+	color: white;
+	vertical-align: middle;
 
 }
+.lista>.elementos>label{
+	text-align: center;
+	width: 120px;
+	color: black;
+	vertical-align: middle;
 }
+
 .mostrar{
 	float:right;
 }
 .lista:nth-child(2n){
 	background: #E7E7E7;
+}
+.results-search-form{
+	margin-bottom:35px;
+	border-radius: 10px;
+}
+.ida{
+	margin-bottom: 10px;
+}
+.vuelta{
+	margin-bottom: 10px;
 }
