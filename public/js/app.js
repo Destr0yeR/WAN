@@ -28,6 +28,9 @@
         }).
         when('/seats', {
             templateUrl: 'seats'
+        }).
+        when('/purchase', {
+            templateUrl: 'purchase'
         });
    	}
 

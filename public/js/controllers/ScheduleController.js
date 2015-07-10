@@ -80,8 +80,14 @@
                 return_date: vm.return_date
             }
 
-            Fligth.set(flight);
-            $location.path('/details');
+            console.log(vm.option_departure);
+            if(typeof vm.option_departure === 'undefined'){
+
+            }
+            else{
+                Fligth.set(flight);
+                $location.path('/details');
+            }
         }
 
         vm.setOptionReturn = function(option) {

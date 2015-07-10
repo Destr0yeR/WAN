@@ -7,7 +7,12 @@
 				<div class="group">
 					<div ng-repeat="row in vm.seats_departure" class="filas" style="font-size: 30px">
 						<div ng-repeat="column in row" class="asiento icn_efect">
-							<span class="ast_icn icon-squared-plus" ng-class="column.occupied?'occupied':'available'"></span>
+							<div ng-class="column.occupied?'':'hidden'">
+								<span class="ast_icn icon-squared-plus" class="occupied"></span>
+							</div>
+							<div ng-click="vm.selectSeat(column.column, column.row, 0)" ng-class="column.occupied?'hidden':''">
+								<span class="ast_icn icon-squared-plus" ng-class="column.occupied?'occupied':'available'"></span>
+							</div>
 							<span class="ast_txt"><%column.column%> - <%column.row%></span>
 						</div>
 					</div>
@@ -21,7 +26,9 @@
 				<div class="group">
 					<div ng-repeat="row in vm.seats_return" class="filas" style="font-size: 30px">
 						<div ng-repeat="column in row" class="asiento icn_efect">
-							<span class="ast_icn icon-squared-plus" ng-class="column.occupied?'occupied':'available'"></span>
+							<div ng-click="vm.selectSeat(column.column, column.row, 1)">
+								<span class="ast_icn icon-squared-plus" ng-class="column.occupied?'occupied':'available'"></span>
+							</div>
 							<span class="ast_txt"><%column.column%> - <%column.row%></span>
 						</div>
 					</div>
@@ -39,6 +46,4 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/wan.js"></script>
-	<script type="text/javascript" src="js/bus04.js"></script>
 </div>

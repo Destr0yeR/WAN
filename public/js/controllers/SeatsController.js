@@ -39,11 +39,51 @@
         		vm.seats_return = fillSeats(data.total_quantity,data.ocupied_seats);
                 console.log(vm.seats_return);
         	});
+            resetSeats();
         }
 
-        function selectSeat(column, row) {
+        function selectSeat(column, row, type) {
             console.log(column);
             console.log(row);
+            var key;
+            if(type == 0){
+                key = findSeat(column, row, vm.departure_seats);
+                if(key == -1){
+                    vm.departure_seats.push({column: column, row: row});
+                }
+                else{
+                    removeSeat(key, vm.departure_seats);
+                }
+            }
+            else{
+                key = findSeat(column, row, vm.arrival_seats);
+                if(key == -1){
+                    vm.arrival_seats.push({column: column, row: row});
+                }
+                else{
+                    removeSeat(key, vm.arrival_seats);
+                }
+            }
+            console.log(vm.departure_seats);
+            console.log(vm.arrival_seats);
+        }
+
+        function resetSeats(){
+            vm.departure_seats = [];
+            vm.arrival_seats = [];
+        }
+
+        function findSeat(column, row, arr){
+            for(var key in arr){
+                var item = arr[key];
+                if(item.column == column && item.row == row)return key;
+            }
+
+            return -1;
+        }
+
+        function removeSeat(index, arr){
+            arr.splice(index, 1);
         }
 
         function fillSeats(capacity, occupied) {
@@ -61,16 +101,27 @@
             hash["E"] = 4;
             hash["F"] = 5;
 
-            for( i = 1 ; i <= (capacity + 5)/6; ++i) {
+            var iter = 1;
+
+            var max_seats = 6;
+
+            if(capacity >= 250) {
+                max_seats = 9;
+            }
+
+            for( i = 1 ; i <= (capacity + (max_seats-1))/max_seats; ++i) {
                 var row = {};
-                for( j = 0 ; j < 6 ; ++j){
+                for( j = 0 ; j < max_seats ; ++j){
                     row[j] = {
                         row: i,
                         column: String.fromCharCode(65 + j),
                         occupied: 0
                     };
+                    iter++;
+                    if(iter == capacity)break;
                 }
                 // 0 => disponible, 1 => ocupado
+                if(iter == capacity)break;
                 seats[i] = row;
             }
 

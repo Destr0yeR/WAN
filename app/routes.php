@@ -47,6 +47,7 @@ Route::group(array('prefix' => 'back', 'before' => 'auth'), function(){
 		Route::get('/', array('as' => 'airports.index', 'uses' => 'AirportController@index'));
 		Route::get('/create', array('as' => 'airports.create', 'uses' => 'AirportController@newAirport'));
 		Route::post('/create', array('as' => 'airports.store', 'uses' => 'AirportController@newStore'));
+		
 	});
 
 });
@@ -66,5 +67,8 @@ Route::group(array(), function(){
 	Route::get('/details', array('as' => 'details', 'uses' => 'HomeController@details'));
 	Route::get('/seats', array('as' => 'seats', 'uses' => 'HomeController@seats'));
 	Route::get('/passengers', array('as' => 'passengers', 'uses' => 'HomeController@passengers'));
+	Route::get('/purchase', array('as' => 'purchase', 'uses' => 'HomeController@purchase'));
 });
 
+
+Route::post('/purchase', array('as' => 'purchase.submit' , 'uses' => 'BraintreeController@purchase'));

@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="css/iconos2.css" type="text/css" />
 		<link rel="stylesheet" href="css/bus04.css" type="text/css" />
 		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/pag01.css">
 		<link rel="stylesheet" type="text/css" href="css/bus02.css">
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery-ui.min.js"></script>

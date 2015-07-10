@@ -39,4 +39,8 @@ class HomeController extends BaseController {
 	public function seats() {
 		return View::make('search.bus04');
 	}
+
+	public function purchase() {
+		return View::make('search.bus06');
+	}
 }
