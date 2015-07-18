@@ -68,6 +68,7 @@ Route::group(array(), function(){
 	Route::get('/seats', array('as' => 'seats', 'uses' => 'HomeController@seats'));
 	Route::get('/passengers', array('as' => 'passengers', 'uses' => 'HomeController@passengers'));
 	Route::get('/purchase', array('as' => 'purchase', 'uses' => 'HomeController@purchase'));
+	Route::get('/success', array('as' => 'purchase', 'uses' => 'HomeController@success'));
 });
 
 

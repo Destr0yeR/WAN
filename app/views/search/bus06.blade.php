@@ -1,4 +1,6 @@
-			{{Form::open(array('route' => 'purchase.submit'))}}
+{{HTML::style('css/bus06.css')}}
+<div ng-controller="PaymentController as vm">
+			
 			<div class="pagos">
 				<div class="tarjetas">
 					<div class="pais">
@@ -46,12 +48,12 @@
 			</div>	
 			<div class="final">
 				<h4>Detalle del pago</h4>
-				<div class="card"><label class="cambio"></label><label>US$200.00</label></div>
-				<div class="card"><label >Impuesto</label><label>US$36.00</label></div>
+				<div class="card"><label class="cambio"></label><label> <% vm.sub_total | currency:"USD$":2 %></label></div>
+				<div class="card"><label >Impuesto</label><label><% vm.total_taxes | currency:"USD$":2 %></label></div>
 				<br>
-				<div class="card"><label>Total a pagar</label><label>US$236.00</label></div>
+				<div class="card"><label>Total a pagar</label><label><% vm.total | currency:"USD$":2 %></label></div>
+
+				<button ng-click="vm.pay()">Pagar</button>
 			</div>
-			<div>
-				{{Form::submit('Pagar')}}
-			</div>
-			{{Form::close()}}
+			
+</div>

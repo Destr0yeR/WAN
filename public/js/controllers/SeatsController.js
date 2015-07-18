@@ -3,14 +3,15 @@
     angular
         .module('wan')
         .controller('SeatsController', Controller);
-    Controller.$inject = ['Fligth', 'ConsumerService'];
+    Controller.$inject = ['Fligth', 'ConsumerService', '$location'];
     /* @ngInject */
-    function Controller(Fligth, ConsumerService) {
+    function Controller(Fligth, ConsumerService, $location) {
         var vm = this;
         vm.title = 'Controller';
         activate();
         vm.fillSeats = fillSeats;
         vm.selectSeat = selectSeat;
+        vm.next = next;
         ////////////////
         function activate() {
         	vm.flight = Fligth.get();
@@ -84,6 +85,10 @@
 
         function removeSeat(index, arr){
             arr.splice(index, 1);
+        }
+
+        function next(){
+            $location.path('/purchase');
         }
 
         function fillSeats(capacity, occupied) {

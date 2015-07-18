@@ -31,6 +31,9 @@
         }).
         when('/purchase', {
             templateUrl: 'purchase'
+        }).
+        when('/success', {
+            templateUrl: 'success'
         });
    	}
 

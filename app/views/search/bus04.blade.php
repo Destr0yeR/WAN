@@ -38,7 +38,7 @@
 	</div>
 
 	<div class="row">
-			<button class="seat-form-button" style="float:right" >Next</button>			
+			<button class="seat-form-button" style="float:right" ng-click="vm.next()">Next</button>			
 	</div>
 
 		

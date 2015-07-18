@@ -43,4 +43,8 @@ class HomeController extends BaseController {
 	public function purchase() {
 		return View::make('search.bus06');
 	}
+
+	public function success() {
+		return View::make('search.bus07');
+	}
 }

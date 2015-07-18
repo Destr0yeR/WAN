@@ -3,9 +3,9 @@
     angular
         .module('wan')
         .controller('FlightDetailController', Controller);
-    Controller.$inject = ['Fligth', '$location'];
+    Controller.$inject = ['Fligth', 'Payment', '$location'];
     /* @ngInject */
-    function Controller(Fligth, $location) {
+    function Controller(Fligth, Payment, $location) {
         var vm = this;
         vm.title = 'Controller';
         vm.exchange = {};
@@ -42,6 +42,12 @@
             vm.total_taxes = vm.taxes * vm.passengers;
 
             vm.total = vm.sub_total + vm.total_taxes;
+
+            vm.flight.sub_total     = vm.sub_total;
+            vm.flight.total_taxes   = vm.total_taxes;
+            vm.flight.total         = vm.total;
+
+            Payment.set(vm.flight);
         }
 
         vm.changeCurrency = function() {

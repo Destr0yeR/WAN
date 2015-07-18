@@ -35,6 +35,7 @@
 	{{HTML::script('js/services/AutoCompleteService.js')}}
 	{{HTML::script('js/entities/Schedule.js')}}
 	{{HTML::script('js/entities/Fligth.js')}}
+	{{HTML::script('js/entities/Payment.js')}}
 	{{HTML::script('js/directives/autocompletedepartureairport.js')}}
 	{{HTML::script('js/directives/autocompletearrivalairport.js')}}
 	{{HTML::script('js/services/ConsumerService.js')}}
@@ -42,4 +43,5 @@
 	{{HTML::script('js/controllers/ScheduleController.js')}}
 	{{HTML::script('js/controllers/FlightDetailController.js')}}
 	{{HTML::script('js/controllers/SeatsController.js')}}
+	{{HTML::script('js/controllers/PaymentController.js')}}
 </html>	
